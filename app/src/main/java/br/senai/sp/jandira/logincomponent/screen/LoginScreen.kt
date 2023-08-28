@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.screen.login
+package br.senai.sp.jandira.logincomponent.screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
