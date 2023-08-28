@@ -66,4 +66,8 @@ dependencies {
 
     //Dependencias do navControler
     implementation("androidx.navigation:navigation-compose:2.6.0")
+
+    //Implementação do Coil
+    implementation("io.coil-kt:coil-compose:2.2.2")
+    implementation("io.coil-kt:coil-svg:2.2.2")
 }
