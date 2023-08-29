@@ -27,5 +27,13 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
+@Composable
+fun SaveEatsPreview() {
+
+    LoginScreen()
+
+}
+
 
 
