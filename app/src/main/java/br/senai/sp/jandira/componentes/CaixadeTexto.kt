@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import br.senai.sp.jandira.R
@@ -21,7 +22,9 @@ fun CaixaDeTexto(
     value: String,
     aoMudar: (String) -> Unit,
     corBorda: Color,
-    shape: Shape
+    shape: Shape,
+    icon: Painter,
+    iconDescricao: String
 
 ) {
 
@@ -34,7 +37,8 @@ fun CaixaDeTexto(
         colors = TextFieldDefaults.outlinedTextFieldColors(
             focusedBorderColor = corBorda,
             unfocusedBorderColor = corBorda),
-        shape = shape
+        shape = shape,
+        leadingIcon = { Icon(painter = icon, contentDescription = iconDescricao)}
     )
 
 

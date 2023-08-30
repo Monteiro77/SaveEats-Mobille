@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SaveEats</string>
+    <string name="welcome">WELCOME</string>
+    <string name="enter_account">Enter into your account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget password</string>
+    <string name="login">Login</string>
+    <string name="dont_have_an_account">Dont have an account?</string>
+    <string name="singup">Sing Up</string>
 </resources>
