@@ -6,6 +6,8 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -46,7 +48,8 @@ fun Form() {
 
     Column(
         modifier = Modifier
-            .padding(5.dp),
+            .padding(5.dp)
+            .height(400.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -76,7 +79,8 @@ fun Form() {
             corBorda = Color(72, 138, 39),
             shape = ShapeDefaults.Small,
             icon = painterResource(id = R.drawable.baseline_email_24),
-            iconDescricao = ""
+            iconDescricao = "",
+            modifier = null
         )
         Spacer(modifier = Modifier.height(10.dp))
 
@@ -88,7 +92,8 @@ fun Form() {
             corBorda = Color(72, 138, 39),
             shape = ShapeDefaults.Small,
             icon = painterResource(id = R.drawable.baseline_lock_24),
-            iconDescricao = ""
+            iconDescricao = "",
+            modifier = null
         )
 
         Text(
@@ -130,7 +135,7 @@ fun Form() {
             )
 
             Text(
-                text = stringResource(id = R.string.singup),
+                text = stringResource(id = R.string.signup),
                 color = Color(20, 58, 11),
                 fontWeight = FontWeight(700)
             )

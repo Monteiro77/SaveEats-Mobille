@@ -30,23 +30,15 @@ import br.senai.sp.jandira.logincomponent.components.Form
 
 @Composable
 fun LoginScreen() {
-    Surface(
-        modifier = Modifier.fillMaxSize()
-    ) {
+
 
         Column(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxSize()
         ) {
-
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-            ) {
-
 
                 Imagem(
                     modifier = Modifier
-                        .size(190.dp)
+                        .size(150.dp)
                         .absoluteOffset(x = -64.dp, y = -46.dp),
                     painter = painterResource(id = R.drawable.prato),
                     descricao = "",
@@ -61,8 +53,8 @@ fun LoginScreen() {
 
                     Imagem(
                         modifier = Modifier
-                            .size(300.dp)
-                            .absoluteOffset(y = -80.dp),
+                            .size(250.dp)
+                            .absoluteOffset(y = -120.dp),
                         painter = painterResource(id = R.drawable.logo),
                         descricao = ""
                     )
@@ -75,7 +67,7 @@ fun LoginScreen() {
                                 descricao = "",
                                 modifier = Modifier
                                     .absoluteOffset(x = -200.dp, y = 30.dp)
-                                    .size(400.dp)
+                                    .size(350.dp)
                             )
 
                         Imagem(
@@ -83,39 +75,29 @@ fun LoginScreen() {
                             descricao = "",
                             modifier = Modifier
                                 .size(400.dp)
-                                .absoluteOffset(x = 80.dp, y = -200.dp)
+                                .absoluteOffset(x = 100.dp, y = -200.dp)
                         )
 
                         Column (
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .absoluteOffset(y = -100.dp),
+                                .absoluteOffset(y = -110.dp),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             Form()
                         }
                     }
 
-
-
-
-
-
-
                 }
 
             }
-
-
-
-        }
     }
-}
 
 
 
 
-@Preview(showBackground = true)
+
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun LoginScreenPreview() {
     LoginScreen()

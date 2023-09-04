@@ -70,4 +70,7 @@ dependencies {
     //Implementação do Coil
     implementation("io.coil-kt:coil-compose:2.2.2")
     implementation("io.coil-kt:coil-svg:2.2.2")
+
+    //Implementação do google fonts
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.4.3")
 }
