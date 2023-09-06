@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.splashcomponent.ui.theme
+package br.senai.sp.jandira.ui.theme.theme
 
 import android.app.Activity
 import android.os.Build

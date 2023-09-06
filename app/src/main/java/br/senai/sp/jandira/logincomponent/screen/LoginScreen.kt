@@ -1,104 +1,95 @@
 package br.senai.sp.jandira.logincomponent.screen
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.absoluteOffset
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Imagem
 import br.senai.sp.jandira.logincomponent.components.Form
+import br.senai.sp.jandira.splashcomponent.SplashScreen
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavHostController) {
 
+    Surface(
+        modifier = Modifier.fillMaxSize()
+    ) {
 
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
 
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(280.dp), Alignment.BottomCenter
+            ) {
+
                 Imagem(
                     modifier = Modifier
                         .size(150.dp)
-                        .absoluteOffset(x = -64.dp, y = -46.dp),
+                        .offset(x = -165.dp, y = -155.dp),
                     painter = painterResource(id = R.drawable.prato),
-                    descricao = "",
+                    descricao = "Prato de comida"
+                )
 
-                    )
-
-                Column (
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-
-                    Imagem(
-                        modifier = Modifier
-                            .size(250.dp)
-                            .absoluteOffset(y = -120.dp),
-                        painter = painterResource(id = R.drawable.logo),
-                        descricao = ""
-                    )
-
-
-                    Box (){
-
-                            Imagem(
-                                painter = painterResource(id = R.drawable.hamburguer),
-                                descricao = "",
-                                modifier = Modifier
-                                    .absoluteOffset(x = -200.dp, y = 30.dp)
-                                    .size(350.dp)
-                            )
-
-                        Imagem(
-                            painter = painterResource(id = R.drawable.pao),
-                            descricao = "",
-                            modifier = Modifier
-                                .size(400.dp)
-                                .absoluteOffset(x = 100.dp, y = -200.dp)
-                        )
-
-                        Column (
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .absoluteOffset(y = -110.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Form()
-                        }
-                    }
-
-                }
+                Imagem(
+                    modifier = Modifier.size(250.dp),
+                    painter = painterResource(id = R.drawable.logo),
+                    descricao = "Logo",
+                )
 
             }
+
+            Box(
+                modifier = Modifier.fillMaxWidth(), Alignment.Center
+            ) {
+
+                Imagem(
+                    modifier = Modifier
+                        .size(180.dp)
+                        .offset(x = -180.dp, y = 60.dp),
+                    painter = painterResource(id = R.drawable.hamburguer),
+                    descricao = "Hamburguer"
+                )
+
+                Imagem(
+                    modifier = Modifier
+                        .size(250.dp)
+                        .offset(x = 150.dp, y = -100.dp),
+                    painter = painterResource(id = R.drawable.pao),
+                    descricao = ""
+                )
+
+                Form(navController)
+
+            }
+
+        }
+
     }
 
+}
 
-
-
-
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun LoginScreenPreview() {
-    LoginScreen()
+fun LoginPreview() {
+    val navController = rememberNavController()
+
+    LoginScreen(navController = navController)
 }

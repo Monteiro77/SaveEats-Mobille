@@ -19,4 +19,5 @@
     <string name="welcome_text_1">Join this sustainable movement that fights food waste by redeeming fresh produce from restaurants, bakeries and fruit and vegetable shops with discounts of up to 70%.</string>
     <string name="welcome_text_2">Discover a variety of recipes and tips to preserve and reuse your food in a creative way.</string>
     <string name="welcome_text_3">Join us as a partner and help fight food waste.</string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>

@@ -3,6 +3,7 @@ package br.senai.sp.jandira.logincomponent.components
 import android.graphics.fonts.Font
 import android.graphics.fonts.FontFamily
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -31,12 +32,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Botao
 import br.senai.sp.jandira.componentes.CaixaDeTexto
 
 @Composable
-fun Form() {
+fun Form(navController: NavController) {
 
     var emailState by remember {
         mutableStateOf("")
@@ -49,7 +52,7 @@ fun Form() {
     Column(
         modifier = Modifier
             .padding(5.dp)
-            .height(400.dp),
+            .height(450.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -58,7 +61,7 @@ fun Form() {
             text = stringResource(id = R.string.welcome),
             color = Color(41, 95, 27),
             fontWeight = FontWeight(700),
-            fontSize = 25.sp
+            fontSize = 36.sp
 
         )
         Text(
@@ -82,6 +85,7 @@ fun Form() {
             iconDescricao = "",
             modifier = null
         )
+
         Spacer(modifier = Modifier.height(10.dp))
 
         CaixaDeTexto(
@@ -97,19 +101,13 @@ fun Form() {
         )
 
         Text(
-            text = stringResource(id = R.string.forget_password),
-            modifier = Modifier
-                .padding(
-                    start = 160.dp,
-                    top = 20.dp
-                ),
-            color = Color(29, 34, 27),
-            fontWeight = FontWeight(500)
+            text = stringResource(id = R.string.forget_password), modifier = Modifier.padding(
+                start = 135.dp, top = 20.dp
+            ), color = Color(29, 34, 27), fontWeight = FontWeight(500)
         )
 
         Spacer(
-            modifier = Modifier
-                .height(30.dp)
+            modifier = Modifier.height(30.dp)
         )
 
         Botao(
@@ -122,6 +120,10 @@ fun Form() {
             fontSize = 20.sp
         )
 
+        Spacer(
+            modifier = Modifier.height(30.dp)
+        )
+
         Row {
             Text(
                 text = stringResource(id = R.string.dont_have_an_account),
@@ -130,23 +132,15 @@ fun Form() {
             )
 
             Spacer(
-                modifier = Modifier
-                    .width(5.dp)
+                modifier = Modifier.width(5.dp)
             )
 
             Text(
+                modifier = Modifier.clickable { navController.navigate("singup_screen") },
                 text = stringResource(id = R.string.signup),
                 color = Color(20, 58, 11),
-                fontWeight = FontWeight(700)
+                fontWeight = FontWeight(700),
             )
         }
-
-
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun FormPreview() {
-    Form()
 }

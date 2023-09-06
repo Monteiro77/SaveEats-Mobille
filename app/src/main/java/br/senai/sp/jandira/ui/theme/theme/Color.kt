@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.splashcomponent.ui.theme
+package br.senai.sp.jandira.ui.theme.theme
 
 import androidx.compose.ui.graphics.Color
 
