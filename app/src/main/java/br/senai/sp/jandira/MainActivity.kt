@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
             SaveEatsTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    SecondSignUpScreen()
+                    MainScreen()
                 }
             }
         }
