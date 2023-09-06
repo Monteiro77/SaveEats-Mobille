@@ -15,13 +15,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Imagem
 
 @Composable
-fun SingUpScreen() {
+fun FirstSignUpScreen(navController: NavHostController) {
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -29,31 +29,28 @@ fun SingUpScreen() {
 
         Button(
             onClick = {},
-            colors = ButtonDefaults.buttonColors(containerColor = Color(120,120,120,0))
+            colors = ButtonDefaults.buttonColors(containerColor = Color(120, 120, 120, 0))
         ) {
             Icon(
-                modifier = Modifier
-                    .size(30.dp),
+                modifier = Modifier.size(30.dp),
                 painter = painterResource(id = R.drawable.baseline_arrow_back_24),
                 contentDescription = "",
                 tint = colorResource(id = R.color.green_41)
 
             )
-            
+
         }
 
-        Column (
-            modifier = Modifier
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally
-            ){
+        Column(
+            modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Imagem(
                 painter = painterResource(id = R.drawable.logo),
                 descricao = "",
-                modifier = Modifier
-                    .size(220.dp))
+                modifier = Modifier.size(220.dp)
+            )
 
-            Box (){
+            Box() {
 
                 Imagem(
                     painter = painterResource(id = R.drawable.hamburguer),
@@ -74,12 +71,11 @@ fun SingUpScreen() {
                 Imagem(
                     painter = painterResource(id = R.drawable.prato),
                     descricao = "",
-                    modifier = Modifier
-                        .absoluteOffset(x = 330.dp, y = 400.dp)
+                    modifier = Modifier.absoluteOffset(x = 330.dp, y = 400.dp)
                 )
 
 
-                Column (
+                Column(
                     modifier = Modifier
                         .fillMaxWidth()
                         .absoluteOffset(y = -10.dp),
@@ -88,16 +84,6 @@ fun SingUpScreen() {
                     br.senai.sp.jandira.singupcomponent.components.Form()
                 }
             }
-
-
         }
-
-
     }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun SingUpScreenPreview() {
-    SingUpScreen()
 }
