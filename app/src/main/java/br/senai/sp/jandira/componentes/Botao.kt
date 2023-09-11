@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.TextUnit
 
 @Composable
 fun Botao(
-    aoClick: (String) -> Unit,
+    aoClick: () -> Unit,
     texto:String,
     corBotao: Color,
     modifier: Modifier,

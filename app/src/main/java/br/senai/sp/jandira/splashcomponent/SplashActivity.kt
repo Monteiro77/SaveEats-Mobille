@@ -22,7 +22,9 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.senai.sp.jandira.MainScreen
 import br.senai.sp.jandira.R
+import br.senai.sp.jandira.homecomponents.screen.HomeScreen
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
 import br.senai.sp.jandira.singupcomponent.screen.FirstSignUpScreen
 import br.senai.sp.jandira.ui.theme.theme.SaveEatsTheme
@@ -64,6 +66,10 @@ fun Navigation() {
 
         composable("singup_screen") {
             FirstSignUpScreen(navController = navController)
+        }
+
+        composable("home_screen"){
+            MainScreen(navController = navController)
         }
     }
 }

@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
@@ -25,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -41,11 +44,11 @@ import br.senai.sp.jandira.componentes.CaixaDeTexto
 @Composable
 fun Form(navController: NavController) {
 
-    var emailState by remember {
+    var emailState by rememberSaveable {
         mutableStateOf("")
     }
 
-    var senhaState by remember {
+    var senhaState by rememberSaveable {
         mutableStateOf("")
     }
 
@@ -110,15 +113,28 @@ fun Form(navController: NavController) {
             modifier = Modifier.height(30.dp)
         )
 
-        Botao(
-            aoClick = {},
-            texto = stringResource(id = R.string.login),
-            corBotao = Color(255, 141, 6),
+//        Botao(
+//            aoClick = {navController.navigate("home_screen")},
+//            texto = stringResource(id = R.string.login),
+//            corBotao = Color(255, 141, 6),
+//            modifier = Modifier
+//                .height(60.dp)
+//                .width(200.dp),
+//            fontSize = 20.sp
+//        )
+
+        Button(
+            onClick = {navController.navigate("home_screen")},
+            colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.orangeButton)),
             modifier = Modifier
                 .height(60.dp)
-                .width(200.dp),
-            fontSize = 20.sp
-        )
+                .width(200.dp)
+            ) {
+            Text(
+                text = "Login",
+                fontSize = 20.sp
+            )
+        }
 
         Spacer(
             modifier = Modifier.height(30.dp)
@@ -136,7 +152,7 @@ fun Form(navController: NavController) {
             )
 
             Text(
-                modifier = Modifier.clickable { navController.navigate("singup_screen") },
+                modifier = Modifier.clickable { navController.navigate("home_screen") },
                 text = stringResource(id = R.string.signup),
                 color = Color(20, 58, 11),
                 fontWeight = FontWeight(700),
