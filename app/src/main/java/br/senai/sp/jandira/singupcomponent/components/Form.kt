@@ -8,29 +8,45 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.googlefonts.GoogleFont
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.senai.sp.jandira.R
-import br.senai.sp.jandira.componentes.Botao
 import br.senai.sp.jandira.componentes.CaixaDeTexto
 
 @Composable
-fun Form() {
+fun Form(navController: NavController) {
+
+    var nameState by remember {
+        mutableStateOf("")
+    }
+    var cpfState by remember {
+        mutableStateOf("")
+    }
+    var cepState by remember {
+        mutableStateOf("")
+    }
+    var phoneState by remember {
+        mutableStateOf("")
+    }
+
     Column (
         modifier = Modifier.padding(5.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -54,8 +70,11 @@ fun Form() {
         Spacer(modifier = Modifier.height(20.dp))
 
         CaixaDeTexto(
-            value = stringResource(id = R.string.name),
-            aoMudar = {},
+            value = nameState,
+            aoMudar = {
+                      nameState = it
+            },
+            label = stringResource(id = R.string.name),
             corBorda = colorResource(id = R.color.greenTextField),
             shape = RoundedCornerShape(12.dp),
             icon = painterResource(id = R.drawable.baseline_person_24),
@@ -66,8 +85,11 @@ fun Form() {
         Spacer(modifier = Modifier.height(20.dp))
 
         CaixaDeTexto(
-            value = stringResource(id = R.string.ssn),
-            aoMudar = {},
+            value = cpfState,
+            aoMudar = {
+                      cpfState = it
+            },
+            label = stringResource(id = R.string.ssn),
             corBorda = colorResource(id = R.color.greenTextField),
             shape = RoundedCornerShape(12.dp),
             icon = painterResource(id = R.drawable.baseline_wallet_24),
@@ -77,8 +99,11 @@ fun Form() {
         Spacer(modifier = Modifier.height(20.dp))
 
         CaixaDeTexto(
-            value = stringResource(id = R.string.zip_code),
-            aoMudar = {},
+            value = cepState,
+            aoMudar = {
+                      cepState = it
+            },
+            label = stringResource(id = R.string.zip_code),
             corBorda = colorResource(id = R.color.greenTextField),
             shape = RoundedCornerShape(12.dp),
             icon = painterResource(id = R.drawable.baseline_place_24),
@@ -88,8 +113,11 @@ fun Form() {
         Spacer(modifier = Modifier.height(20.dp))
 
         CaixaDeTexto(
-            value = stringResource(id = R.string.phone),
-            aoMudar = {},
+            value = phoneState,
+            aoMudar = {
+                      phoneState = it
+            },
+            label = stringResource(id = R.string.phone),
             corBorda = colorResource(id = R.color.greenTextField),
             shape = RoundedCornerShape(12.dp),
             icon = painterResource(id = R.drawable.baseline_phone_24),
@@ -130,23 +158,33 @@ fun Form() {
             }
         }
 
-        Botao(
-            aoClick = {},
-            texto = stringResource(id = R.string.next),
-            corBotao = colorResource(id = R.color.orangeButton),
+//        Botao(
+//            aoClick = {
+//                      navController.navigate("signup2_screen")
+//            },
+//            texto = stringResource(id = R.string.next),
+//            corBotao = colorResource(id = R.color.orangeButton),
+//            modifier = Modifier
+//                .height(45.dp)
+//                .width(200.dp),
+//            fontSize = 20.sp
+//        )
+
+        Button(
+            onClick = {navController.navigate("signup2_screen")},
+            colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.orangeButton)),
             modifier = Modifier
-                .height(45.dp)
-                .width(200.dp),
-            fontSize = 20.sp
-        )
+                .height(60.dp)
+                .width(200.dp)
+        ) {
+            Text(
+                text = "NEXT",
+                fontSize = 20.sp
+            )
+        }
 
     }
 
 
 }
 
-@Preview(showBackground = true)
-@Composable
-fun FormPreview() {
-    Form()
-}

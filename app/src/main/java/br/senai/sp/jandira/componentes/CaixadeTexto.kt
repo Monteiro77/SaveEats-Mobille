@@ -4,7 +4,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -29,6 +28,7 @@ fun CaixaDeTexto(
     shape: Shape,
     icon: Painter,
     iconDescricao: String,
+    label: String,
     modifier: Modifier?
 
 ): Unit {
@@ -43,7 +43,18 @@ fun CaixaDeTexto(
             focusedBorderColor = corBorda,
             unfocusedBorderColor = corBorda),
         shape = shape,
-        leadingIcon = { Icon(painter = icon, contentDescription = iconDescricao)}
+        leadingIcon = {
+            Icon(
+                painter = icon,
+                contentDescription = iconDescricao,
+                tint = colorResource(id = R.color.icon)
+        )},
+        label = {
+            Text(
+                text = label,
+                color = colorResource(id = R.color.icon)
+            )
+        }
     )
 
 
@@ -51,17 +62,18 @@ fun CaixaDeTexto(
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun CaixaDeTextoPreview() {
-
-    CaixaDeTexto(
-        value = stringResource(id = R.string.zip_code),
-        aoMudar = {},
-        corBorda = colorResource(id = R.color.greenTextField),
-        shape = RoundedCornerShape(12.dp),
-        icon = painterResource(id = R.drawable.baseline_place_24),
-        iconDescricao = "",
-        modifier = null
-    )
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun CaixaDeTextoPreview() {
+//
+//    CaixaDeTexto(
+//        value = stringResource(id = R.string.zip_code),
+//        aoMudar = {},
+//        corBorda = colorResource(id = R.color.greenTextField),
+//        shape = RoundedCornerShape(12.dp),
+//        icon = painterResource(id = R.drawable.baseline_place_24),
+//        iconDescricao = "",
+//        modifier = null
+//    )
+//
+//}

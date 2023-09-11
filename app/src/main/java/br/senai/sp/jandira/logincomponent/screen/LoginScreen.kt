@@ -9,22 +9,26 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Imagem
 import br.senai.sp.jandira.logincomponent.components.Form
-import br.senai.sp.jandira.splashcomponent.SplashScreen
 
 @Composable
 fun LoginScreen(navController: NavHostController) {
+
+
+
 
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -49,7 +53,7 @@ fun LoginScreen(navController: NavHostController) {
                 )
 
                 Imagem(
-                    modifier = Modifier.size(250.dp),
+                    modifier = Modifier.size(200.dp),
                     painter = painterResource(id = R.drawable.logo),
                     descricao = "Logo",
                 )

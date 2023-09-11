@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -17,20 +18,24 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Imagem
 import br.senai.sp.jandira.singupcomponent.components.Form
 import br.senai.sp.jandira.singupcomponent.components.SecondForm
 
 @Composable
-fun SecondSignUpScreen() {
+fun SecondSignUpScreen(navController: NavHostController) {
 
     Column(
         modifier = Modifier
             .fillMaxSize()
     ) {
         Button(
-            onClick = {},
+            onClick = {
+                      navController.navigate("singup_screen")
+            },
             colors = ButtonDefaults.buttonColors(containerColor = Color(120,120,120,0))
         ) {
             Icon(
@@ -53,25 +58,25 @@ fun SecondSignUpScreen() {
                 painter = painterResource(id = R.drawable.logo),
                 descricao = "",
                 modifier = Modifier
-                    .size(220.dp)
+                    .size(180.dp)
             )
 
             Box (){
 
                 Imagem(
-                    painter = painterResource(id = R.drawable.hamburguer),
-                    descricao = "",
                     modifier = Modifier
-                        .absoluteOffset(x = -210.dp, y = 60.dp)
-                        .size(350.dp)
+                        .size(180.dp)
+                        .offset(x = -65.dp, y = 80.dp),
+                    painter = painterResource(id = R.drawable.hamburguer),
+                    descricao = "Hamburguer"
                 )
 
                 Imagem(
-                    painter = painterResource(id = R.drawable.pao),
-                    descricao = "",
                     modifier = Modifier
-                        .size(300.dp)
-                        .absoluteOffset(x = 170.dp, y = -150.dp)
+                        .size(250.dp)
+                        .offset(x = 235.dp, y = -180.dp),
+                    painter = painterResource(id = R.drawable.pao),
+                    descricao = ""
                 )
 
                 Imagem(
@@ -88,7 +93,7 @@ fun SecondSignUpScreen() {
                         .absoluteOffset(y = 20.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    SecondForm()
+                    SecondForm(navController = navController)
                 }
             }
         }
@@ -99,5 +104,4 @@ fun SecondSignUpScreen() {
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun SecondSignUpScreenPreview() {
-    SecondSignUpScreen()
 }

@@ -1,20 +1,15 @@
 package br.senai.sp.jandira.logincomponent.components
 
-import android.graphics.fonts.Font
-import android.graphics.fonts.FontFamily
-import androidx.compose.foundation.border
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
 import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,31 +19,25 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.R
-import br.senai.sp.jandira.componentes.Botao
 import br.senai.sp.jandira.componentes.CaixaDeTexto
 
 @Composable
 fun Form(navController: NavController) {
 
-    var emailState by rememberSaveable {
+    var emailState by remember {
         mutableStateOf("")
     }
-
-    var senhaState by rememberSaveable {
+    var passwordState by remember {
         mutableStateOf("")
     }
 
@@ -78,10 +67,11 @@ fun Form(navController: NavController) {
 
 
         CaixaDeTexto(
-            value = stringResource(id = R.string.email),
+            value = emailState,
             aoMudar = {
                 emailState = it
             },
+            label = stringResource(id = R.string.email),
             corBorda = Color(72, 138, 39),
             shape = ShapeDefaults.Small,
             icon = painterResource(id = R.drawable.baseline_email_24),
@@ -92,10 +82,11 @@ fun Form(navController: NavController) {
         Spacer(modifier = Modifier.height(10.dp))
 
         CaixaDeTexto(
-            value = stringResource(id = R.string.password),
+            value = passwordState,
             aoMudar = {
-                senhaState = it
+                passwordState = it
             },
+            label =  stringResource(id = R.string.password),
             corBorda = Color(72, 138, 39),
             shape = ShapeDefaults.Small,
             icon = painterResource(id = R.drawable.baseline_lock_24),
@@ -122,7 +113,7 @@ fun Form(navController: NavController) {
 //                .width(200.dp),
 //            fontSize = 20.sp
 //        )
-
+//
         Button(
             onClick = {navController.navigate("home_screen")},
             colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.orangeButton)),
@@ -152,7 +143,7 @@ fun Form(navController: NavController) {
             )
 
             Text(
-                modifier = Modifier.clickable { navController.navigate("home_screen") },
+                modifier = Modifier.clickable { navController.navigate("singup_screen") },
                 text = stringResource(id = R.string.signup),
                 color = Color(20, 58, 11),
                 fontWeight = FontWeight(700),
