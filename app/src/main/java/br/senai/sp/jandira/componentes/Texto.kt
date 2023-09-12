@@ -1,24 +1,64 @@
 package br.senai.sp.jandira.componentes
 
+import android.util.Size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
+import br.senai.sp.jandira.R
+import br.senai.sp.jandira.ui.theme.fontFamily
 
 @Composable
-fun Texto(
-    value: String
-) {
+fun TextoComTodosAtributos(
+    value: String,
+    corTexto: Color,
+    fontWeight: FontWeight?,
+    fontSize: TextUnit
+
+
+): Unit {
 
     Text(
-        text = value
+        text = value,
+        fontFamily = fontFamily,
+        color = corTexto,
+        fontWeight = fontWeight,
+        fontSize = fontSize
     )
 
 }
 
+@Composable
+fun TextoSemEdicao(
+    value: String
+): Unit {
+
+    Text(
+        text = value,
+        fontFamily = fontFamily
+    )
+    
+}
+
+@Composable
+fun TextoBranco(
+    value: String
+) {
+    Text(
+        text = value,
+        fontFamily = fontFamily,
+        color = colorResource(id = R.color.white)
+    )
+    
+}
+
+
+
 @Preview(showBackground = true)
 @Composable
 fun TextoPreview() {
-    Texto(value = "Monteiro")
 }

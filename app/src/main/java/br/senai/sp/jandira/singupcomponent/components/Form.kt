@@ -79,7 +79,7 @@ fun Form(navController: NavController) {
             shape = RoundedCornerShape(12.dp),
             icon = painterResource(id = R.drawable.baseline_person_24),
             iconDescricao = "",
-            modifier = null
+            modifier = Modifier
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -94,7 +94,7 @@ fun Form(navController: NavController) {
             shape = RoundedCornerShape(12.dp),
             icon = painterResource(id = R.drawable.baseline_wallet_24),
             iconDescricao = "",
-            modifier = null
+            modifier = Modifier
         )
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -108,7 +108,7 @@ fun Form(navController: NavController) {
             shape = RoundedCornerShape(12.dp),
             icon = painterResource(id = R.drawable.baseline_place_24),
             iconDescricao = "",
-            modifier = null
+            modifier = Modifier
         )
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -122,7 +122,7 @@ fun Form(navController: NavController) {
             shape = RoundedCornerShape(12.dp),
             icon = painterResource(id = R.drawable.baseline_phone_24),
             iconDescricao = "",
-            modifier = null
+            modifier = Modifier
         )
 
         Spacer(modifier = Modifier.height(40.dp))

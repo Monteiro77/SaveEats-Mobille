@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.componentes
 
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -29,7 +30,7 @@ fun CaixaDeTexto(
     icon: Painter,
     iconDescricao: String,
     label: String,
-    modifier: Modifier?
+    modifier: Modifier
 
 ): Unit {
 
@@ -54,7 +55,8 @@ fun CaixaDeTexto(
                 text = label,
                 color = colorResource(id = R.color.icon)
             )
-        }
+        },
+        modifier = modifier
     )
 
 

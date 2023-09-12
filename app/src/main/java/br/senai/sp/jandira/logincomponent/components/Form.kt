@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,12 +25,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.CaixaDeTexto
+import br.senai.sp.jandira.ui.theme.fontFamily
 
 @Composable
 fun Form(navController: NavController) {
@@ -41,11 +44,13 @@ fun Form(navController: NavController) {
         mutableStateOf("")
     }
 
+
     Column(
         modifier = Modifier
             .padding(5.dp)
             .height(450.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+
     ) {
 
 
@@ -53,13 +58,15 @@ fun Form(navController: NavController) {
             text = stringResource(id = R.string.welcome),
             color = Color(41, 95, 27),
             fontWeight = FontWeight(700),
-            fontSize = 36.sp
+            fontSize = 36.sp,
+            fontFamily = fontFamily
 
         )
         Text(
             text = stringResource(id = R.string.enter_account),
             fontSize = 14.sp,
-            fontWeight = FontWeight(400)
+            fontWeight = FontWeight(400),
+            style = MaterialTheme.typography.bodyLarge
 
         )
 
@@ -76,7 +83,8 @@ fun Form(navController: NavController) {
             shape = ShapeDefaults.Small,
             icon = painterResource(id = R.drawable.baseline_email_24),
             iconDescricao = "",
-            modifier = null
+            modifier = Modifier
+
         )
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -91,7 +99,7 @@ fun Form(navController: NavController) {
             shape = ShapeDefaults.Small,
             icon = painterResource(id = R.drawable.baseline_lock_24),
             iconDescricao = "",
-            modifier = null
+            modifier = Modifier
         )
 
         Text(

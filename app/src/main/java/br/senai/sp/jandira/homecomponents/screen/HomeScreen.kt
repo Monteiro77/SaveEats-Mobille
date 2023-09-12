@@ -11,27 +11,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import br.senai.sp.jandira.homecomponents.components.Header
 
 @Composable
 fun HomeScreen() {
     Column(
         modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+            .fillMaxSize()
     ) {
-        Text(
-            text = "HOME",
-            fontSize = 20.sp,
-            color = Color.Blue
-        )
+        Header()
 
 
     }
 }
 
-@Preview
+@Preview(showSystemUi = true )
 @Composable
 fun HomeScreenPreview() {
-
+    HomeScreen()
 }

@@ -87,7 +87,7 @@ fun SecondForm(navController: NavController) {
                 shape = RoundedCornerShape(12.dp),
                 icon = painterResource(id = R.drawable.baseline_email_24),
                 iconDescricao = "",
-                modifier = null
+                modifier = Modifier
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -102,7 +102,7 @@ fun SecondForm(navController: NavController) {
                 shape = RoundedCornerShape(12.dp),
                 icon = painterResource(id = R.drawable.baseline_lock_24),
                 iconDescricao = "",
-                modifier = null
+                modifier = Modifier
             )
 
             Spacer(modifier = Modifier.height(20.dp))
