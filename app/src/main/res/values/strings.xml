@@ -21,5 +21,10 @@
     <string name="welcome_text_2">Discover a variety of recipes and tips to preserve and reuse your food in a creative way.</string>
     <string name="welcome_text_3">Join us as a partner and help fight food waste.</string>
     <string name="title_activity_splash" translatable="false">SplashActivity</string>
+    <string name="categories">Categories</string>
+    <string name="restaurant">Restaurants</string>
+    <string name="text1_slider">Enjoy discounts of up to 70% and buy quality food!</string>
+    <string name="text2_slider">Discover partner restaurants of your choice!</string>
+    <string name="text3_slider">Explore simple recipes and get tips for preserving your food effectively.</string>
 
 </resources>

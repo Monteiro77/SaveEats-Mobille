@@ -12,6 +12,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
@@ -26,8 +30,16 @@ import br.senai.sp.jandira.ui.theme.fontFamily
 
 @Composable
 fun Header() {
+
+    var searchState by remember{
+        mutableStateOf("")
+    }
+
+
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .padding(5.dp)
     ) {
         Row (
             modifier = Modifier
@@ -69,8 +81,10 @@ fun Header() {
         }
 
         CaixaDeTexto(
-            value = "",
-            aoMudar = {},
+            value = searchState,
+            aoMudar = {
+                      searchState = it
+            },
             corBorda = colorResource(id = R.color.black),
             shape = RoundedCornerShape(10.dp),
             icon = painterResource(id = R.drawable.baseline_search_24),

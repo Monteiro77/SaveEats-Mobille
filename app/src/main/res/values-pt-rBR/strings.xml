@@ -20,7 +20,10 @@
     <string name="welcome_text_1">Participe deste movimento sustentável que combate o desperdício de alimentos ao resgatar produtos frescos de restaurantes, padarias e hortifrutis com descontos de até 70%.</string>
     <string name="welcome_text_2">Descubra uma variedade de receitas e dicas para conservar e reaproveitar seus alimentos de forma criativa.</string>
     <string name="welcome_text_3">Junte-se a nós como parceiro e ajude a combater o desperdício de alimentos.</string>
-    <string name="signup_caps">CADASTRE-SE
-
-    </string>
+    <string name="signup_caps">CADASTRE-SE</string>
+    <string name="categories">Categorias</string>
+    <string name="restaurant">Restaurantes</string>
+    <string name="text1_slider">Aproveite descontos de até 70% e adquira alimentos de qualidade!</string>
+    <string name="text2_slider">Descubra restaurantes parceiros de sua escolha!</string>
+    <string name="text3_slider">Explore receitas simples e obtenha dicas para conservar seus alimentos de maneira eficaz.</string>
 </resources>
