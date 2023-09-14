@@ -59,11 +59,7 @@ fun FirstSignUpScreen(navController: NavController) {
                 .fillMaxHeight(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Imagem(
-                painter = painterResource(id = R.drawable.logo),
-                descricao = "",
-                modifier = Modifier.size(180.dp)
-            )
+
 
             Box() {
 
@@ -86,7 +82,7 @@ fun FirstSignUpScreen(navController: NavController) {
                 Imagem(
                     painter = painterResource(id = R.drawable.prato),
                     descricao = "",
-                    modifier = Modifier.absoluteOffset(x = 330.dp, y = 400.dp)
+                    modifier = Modifier.absoluteOffset(x = 330.dp, y = 700.dp)
                 )
 
 
@@ -106,5 +102,5 @@ fun FirstSignUpScreen(navController: NavController) {
 @Preview
 @Composable
 fun SignUpScreenPreview() {
-    
+
 }

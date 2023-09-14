@@ -4,7 +4,8 @@ package br.senai.sp.jandira.homecomponents.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -20,15 +21,21 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
@@ -40,19 +47,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Imagem
-
+import br.senai.sp.jandira.ui.theme.fontFamily
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun Form() {
 
+    var iconState by remember{
+        mutableStateOf(false)
+    }
+
     
     Column {
         Column {
 
             Text(
-                text = stringResource(id = R.string.categories)
+                text = stringResource(id = R.string.categories),
+                color = colorResource(id = R.color.categories),
+                fontSize = 18.sp,
+                modifier = Modifier.padding(start = 20.dp)
             )
 
             Spacer(
@@ -119,6 +133,15 @@ fun Form() {
                 )
             }
 
+            val coresCarrosel = remember {
+                mutableListOf(
+                    R.color.carrossel_1,
+                    R.color.carrossel_2,
+                    R.color.carrossel_3
+
+                )
+            }
+
             val pagerState = rememberPagerState(
                 pageCount = {
                     3
@@ -131,14 +154,15 @@ fun Form() {
                     .width(350.dp)
             ) {
                 HorizontalPager(
-                    modifier = Modifier
-                        .padding(5.dp),
+                    modifier = Modifier,
                     state = pagerState,
                     pageSpacing = 0.dp,
                     pageContent = {
                         Row (
                             verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.fillMaxSize()
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(colorResource(id = coresCarrosel[it]))
 
                         ){
                             Column (
@@ -215,7 +239,10 @@ fun Form() {
         }
 
         Text(
-            text = stringResource(id = R.string.restaurant)
+            text = stringResource(id = R.string.restaurant),
+            color = colorResource(id = R.color.categories),
+            fontSize = 18.sp,
+            modifier = Modifier.padding(start = 20.dp)
         )
         LazyColumn(
             modifier = Modifier
@@ -240,6 +267,79 @@ fun Form() {
                     )
                 ){
 
+                    Row (
+                        modifier = Modifier
+                            .padding(5.dp)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ){
+                        Row {
+                            Imagem(
+                                painter = painterResource(id = R.drawable.restaurante),
+                                descricao = "Image Description",
+                                modifier = Modifier
+                                    .size(60.dp)
+                                    .clip(CircleShape))
+                            Column (Modifier.padding(5.dp)){
+
+                                Text(
+                                    text = "Restaurante Dois Irmãos",
+                                    color = colorResource(id = R.color.name_restaurant)
+                                )
+                                Row (
+
+                                    verticalAlignment = Alignment.CenterVertically
+                                    ){
+                                    Row (
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.Center,
+                                        modifier = Modifier
+                                            .width(50.dp)
+                                    ){
+                                        Icon(
+                                            painter = painterResource(id = R.drawable.baseline_star_rate_24),
+                                            contentDescription = "",
+                                            tint = colorResource(id = R.color.star_rate),
+                                            modifier = Modifier
+                                                .size(15.dp)
+                                        )
+                                        Text(
+                                            text = "4,4",
+                                            color = colorResource(id = R.color.star_rate)
+                                        )
+                                    }
+                                    Text(
+                                        text = "Padaria",
+                                        fontFamily = fontFamily,
+                                        color = colorResource(id = R.color.gray),
+                                        fontSize = 12.sp
+                                    )
+                                }
+                            }
+                        }
+                        Icon(
+                            painter =
+                            if(iconState == false)
+                                painterResource(id = R.drawable.baseline_favorite_border_24)
+                            else
+                                painterResource(id = R.drawable.baseline_favorite_24),
+                            contentDescription = "",
+                            modifier = Modifier
+                                .clickable {
+                                    iconState = iconState != true
+                                },
+                            tint =
+                            if(iconState == false)
+                                colorResource(id = R.color.unselected_item)
+                            else
+                                colorResource(id = R.color.red)
+
+                        )
+
+
+                    }
+
 
 
                 }
@@ -247,6 +347,13 @@ fun Form() {
         }
     }
 
+}
+
+@Composable
+fun Favoritar(): Color {
+
+    return colorResource(id = R.color.orangeButton)
+    
 }
 
 @Preview(showBackground = true)

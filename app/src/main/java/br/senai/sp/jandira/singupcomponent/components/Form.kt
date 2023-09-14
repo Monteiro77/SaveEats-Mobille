@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.singupcomponent.components
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -40,10 +41,17 @@ fun Form(navController: NavController) {
     var cpfState by remember {
         mutableStateOf("")
     }
-    var cepState by remember {
+
+    var phoneState by remember {
         mutableStateOf("")
     }
-    var phoneState by remember {
+    var emailState by remember {
+        mutableStateOf("")
+    }
+    var passwordState by remember {
+        mutableStateOf("")
+    }
+    var passwordConfirmationState by remember {
         mutableStateOf("")
     }
 
@@ -51,8 +59,6 @@ fun Form(navController: NavController) {
         modifier = Modifier.padding(5.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-
-
 
         Text(
             text = stringResource(id = R.string.signup),
@@ -99,14 +105,44 @@ fun Form(navController: NavController) {
         Spacer(modifier = Modifier.height(20.dp))
 
         CaixaDeTexto(
-            value = cepState,
+            value =emailState,
             aoMudar = {
-                      cepState = it
+                emailState= it
             },
-            label = stringResource(id = R.string.zip_code),
+            label =  stringResource(id = R.string.email),
             corBorda = colorResource(id = R.color.greenTextField),
             shape = RoundedCornerShape(12.dp),
-            icon = painterResource(id = R.drawable.baseline_place_24),
+            icon = painterResource(id = R.drawable.baseline_email_24),
+            iconDescricao = "",
+            modifier = Modifier
+        )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        CaixaDeTexto(
+            value = passwordState,
+            aoMudar = {
+                passwordState = it
+            },
+            label = stringResource(id = R.string.password),
+            corBorda = colorResource(id = R.color.greenTextField),
+            shape = RoundedCornerShape(12.dp),
+            icon = painterResource(id = R.drawable.baseline_lock_24),
+            iconDescricao = "",
+            modifier = Modifier
+        )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        CaixaDeTexto(
+            value = passwordConfirmationState,
+            aoMudar = {
+                passwordConfirmationState = it
+            },
+            label = stringResource(id = R.string.confirm_password),
+            corBorda = colorResource(id = R.color.greenTextField),
+            shape = RoundedCornerShape(12.dp),
+            icon = painterResource(id = R.drawable.baseline_lock_24),
             iconDescricao = "",
             modifier = Modifier
         )
@@ -171,7 +207,13 @@ fun Form(navController: NavController) {
 //        )
 
         Button(
-            onClick = {navController.navigate("signup2_screen")},
+            onClick = {
+                if (passwordConfirmationState == passwordState ){
+                    navController.navigate("signup2_screen")
+                }else{
+
+                }
+            },
             colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.orangeButton)),
             modifier = Modifier
                 .height(60.dp)

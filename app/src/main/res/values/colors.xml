@@ -10,4 +10,12 @@
     <color name="unselected_item">#a0a0a0</color>
     <color name="icon">#82B296</color>
     <color name="background">#E6E9F0</color>
+    <color name="star_rate">#FF8D06</color>
+    <color name="red">#FF0000</color>
+    <color name="carrossel_1">#D4E3CC</color>
+    <color name="carrossel_2">#C7D1E4</color>
+    <color name="carrossel_3">#E4DDC7</color>
+    <color name="gray">#555555</color>
+    <color name="name_restaurant">#1F1F20</color>
+    <color name="categories">#143A0B</color>
 </resources>
