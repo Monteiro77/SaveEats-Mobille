@@ -26,4 +26,8 @@
     <string name="text1_slider">Aproveite descontos de até 70% e adquira alimentos de qualidade!</string>
     <string name="text2_slider">Descubra restaurantes parceiros de sua escolha!</string>
     <string name="text3_slider">Explore receitas simples e obtenha dicas para conservar seus alimentos de maneira eficaz.</string>
+    <string name="state">Estado</string>
+    <string name="city">Cidade</string>
+    <string name="street">Rua</string>
+    <string name="number_street">Numero</string>
 </resources>

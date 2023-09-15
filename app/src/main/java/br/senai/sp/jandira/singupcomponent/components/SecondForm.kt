@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -41,6 +42,18 @@ fun SecondForm(navController: NavController) {
     var cepState by remember {
         mutableStateOf("")
     }
+    var estadoState by remember {
+        mutableStateOf("")
+    }
+    var cidadeState by remember {
+        mutableStateOf("")
+    }
+    var ruaState by remember {
+        mutableStateOf("")
+    }
+    var numeroState by remember {
+        mutableStateOf("")
+    }
 
     var showToast by remember { mutableStateOf(false) }
 
@@ -49,13 +62,15 @@ fun SecondForm(navController: NavController) {
     Column(
         modifier = Modifier
             .padding(5.dp)
-            .height(480.dp),
+            .height(650.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
 
     ) {
 
-        Column (horizontalAlignment = Alignment.CenterHorizontally){
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
             Text(
                 text = stringResource(id = R.string.signup),
                 color = Color(41, 95, 27),
@@ -70,7 +85,11 @@ fun SecondForm(navController: NavController) {
             )
         }
 
-        Column (){
+        Column (
+            verticalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier
+                .height(400.dp)
+        ){
 
             CaixaDeTexto(
                 value = cepState,
@@ -84,6 +103,56 @@ fun SecondForm(navController: NavController) {
                 iconDescricao = "",
                 modifier = Modifier
             )
+
+            CaixaDeTexto(
+                value = estadoState,
+                aoMudar = {
+                    estadoState = it
+                },
+                label = stringResource(id = R.string.state),
+                corBorda = colorResource(id = R.color.greenTextField),
+                shape = RoundedCornerShape(12.dp),
+                icon = painterResource(id = R.drawable.baseline_place_24),
+                iconDescricao = "",
+                modifier = Modifier
+            )
+            CaixaDeTexto(
+                value = cidadeState,
+                aoMudar = {
+                    cidadeState = it
+                },
+                label = stringResource(id = R.string.city),
+                corBorda = colorResource(id = R.color.greenTextField),
+                shape = RoundedCornerShape(12.dp),
+                icon = painterResource(id = R.drawable.baseline_place_24),
+                iconDescricao = "",
+                modifier = Modifier
+            )
+            CaixaDeTexto(
+                value = ruaState,
+                aoMudar = {
+                    ruaState = it
+                },
+                label = stringResource(id = R.string.street),
+                corBorda = colorResource(id = R.color.greenTextField),
+                shape = RoundedCornerShape(12.dp),
+                icon = painterResource(id = R.drawable.baseline_place_24),
+                iconDescricao = "",
+                modifier = Modifier
+            )
+            CaixaDeTexto(
+                value = numeroState,
+                aoMudar = {
+                    numeroState = it
+                },
+                label = stringResource(id = R.string.number_street),
+                corBorda = colorResource(id = R.color.greenTextField),
+                shape = RoundedCornerShape(12.dp),
+                icon = painterResource(id = R.drawable.baseline_place_24),
+                iconDescricao = "",
+                modifier = Modifier
+            )
+
 
 
         }
@@ -119,7 +188,7 @@ fun SecondForm(navController: NavController) {
 
             Button(
                 onClick = {
-
+                    navController.navigate("home_screen")
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.orangeButton)),
                 modifier = Modifier

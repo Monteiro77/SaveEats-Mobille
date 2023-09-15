@@ -54,19 +54,13 @@ fun SecondSignUpScreen(navController: NavHostController) {
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Imagem(
-                painter = painterResource(id = R.drawable.logo),
-                descricao = "",
-                modifier = Modifier
-                    .size(180.dp)
-            )
 
             Box (){
 
                 Imagem(
                     modifier = Modifier
-                        .size(180.dp)
-                        .offset(x = -65.dp, y = 80.dp),
+                        .size(230.dp)
+                        .offset(x = -115.dp, y = 250.dp),
                     painter = painterResource(id = R.drawable.hamburguer),
                     descricao = "Hamburguer"
                 )
@@ -74,7 +68,7 @@ fun SecondSignUpScreen(navController: NavHostController) {
                 Imagem(
                     modifier = Modifier
                         .size(250.dp)
-                        .offset(x = 235.dp, y = -180.dp),
+                        .offset(x = 235.dp, y = -150.dp),
                     painter = painterResource(id = R.drawable.pao),
                     descricao = ""
                 )
@@ -83,7 +77,8 @@ fun SecondSignUpScreen(navController: NavHostController) {
                     painter = painterResource(id = R.drawable.prato),
                     descricao = "",
                     modifier = Modifier
-                        .absoluteOffset(x = 330.dp, y = 400.dp)
+                        .absoluteOffset(x = 310.dp, y = 590.dp)
+                        .size(150.dp)
                 )
 
 

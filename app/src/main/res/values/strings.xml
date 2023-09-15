@@ -26,5 +26,9 @@
     <string name="text1_slider">Enjoy discounts of up to 70% and buy quality food!</string>
     <string name="text2_slider">Discover partner restaurants of your choice!</string>
     <string name="text3_slider">Explore simple recipes and get tips for preserving your food effectively.</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="street">Street</string>
+    <string name="number_street">Number</string>
 
 </resources>

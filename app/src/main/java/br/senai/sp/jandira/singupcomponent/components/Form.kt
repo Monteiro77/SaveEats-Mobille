@@ -105,6 +105,21 @@ fun Form(navController: NavController) {
         Spacer(modifier = Modifier.height(20.dp))
 
         CaixaDeTexto(
+            value = phoneState,
+            aoMudar = {
+                phoneState = it
+            },
+            label = stringResource(id = R.string.phone),
+            corBorda = colorResource(id = R.color.greenTextField),
+            shape = RoundedCornerShape(12.dp),
+            icon = painterResource(id = R.drawable.baseline_phone_24),
+            iconDescricao = "",
+            modifier = Modifier
+        )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        CaixaDeTexto(
             value =emailState,
             aoMudar = {
                 emailState= it
@@ -146,20 +161,9 @@ fun Form(navController: NavController) {
             iconDescricao = "",
             modifier = Modifier
         )
-        Spacer(modifier = Modifier.height(20.dp))
 
-        CaixaDeTexto(
-            value = phoneState,
-            aoMudar = {
-                      phoneState = it
-            },
-            label = stringResource(id = R.string.phone),
-            corBorda = colorResource(id = R.color.greenTextField),
-            shape = RoundedCornerShape(12.dp),
-            icon = painterResource(id = R.drawable.baseline_phone_24),
-            iconDescricao = "",
-            modifier = Modifier
-        )
+
+
 
         Spacer(modifier = Modifier.height(40.dp))
 
