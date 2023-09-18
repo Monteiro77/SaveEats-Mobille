@@ -33,6 +33,28 @@ fun TextoComTodosAtributos(
 }
 
 @Composable
+fun TextoComTodosAtributosEModifier(
+    value: String,
+    corTexto: Color,
+    fontWeight: FontWeight?,
+    fontSize: TextUnit,
+    modifier: Modifier
+
+
+): Unit {
+
+    Text(
+        text = value,
+        fontFamily = fontFamily,
+        color = corTexto,
+        fontWeight = fontWeight,
+        fontSize = fontSize,
+        modifier = Modifier
+    )
+
+}
+
+@Composable
 fun TextoSemEdicao(
     value: String
 ): Unit {

@@ -45,6 +45,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Imagem
 import br.senai.sp.jandira.ui.theme.fontFamily
@@ -52,7 +54,7 @@ import br.senai.sp.jandira.ui.theme.fontFamily
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Form() {
+fun Form(navController: NavHostController) {
 
     var iconState by remember{
         mutableStateOf(false)
@@ -260,7 +262,6 @@ fun Form() {
                             spotColor = Color.Black,
                             ambientColor = Color.Black,
                             shape = RoundedCornerShape(5.dp)
-
                         ),
                     colors = CardDefaults.cardColors(
                         containerColor = colorResource(id = R.color.background)
@@ -285,7 +286,10 @@ fun Form() {
 
                                 Text(
                                     text = "Restaurante Dois Irmãos",
-                                    color = colorResource(id = R.color.name_restaurant)
+                                    color = colorResource(id = R.color.name_restaurant),
+                                    modifier = Modifier.clickable {
+                                        navController.navigate("login_screen")
+                                    }
                                 )
                                 Row (
 
@@ -349,16 +353,10 @@ fun Form() {
 
 }
 
-@Composable
-fun Favoritar(): Color {
 
-    return colorResource(id = R.color.orangeButton)
-    
-}
 
 @Preview(showBackground = true)
 @Composable
 fun FormPreview() {
-    Form()
 
 }

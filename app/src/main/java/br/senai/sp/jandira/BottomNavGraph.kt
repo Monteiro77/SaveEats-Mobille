@@ -18,7 +18,7 @@ fun BottomNavGraph(navController: NavHostController) {
 
     ){
         composable(route = BottomBarScreen.Home.route){
-            HomeScreen()
+            HomeScreen(navController)
         }
         composable(route = BottomBarScreen.Historico.route){
             HistoricoScreen()
