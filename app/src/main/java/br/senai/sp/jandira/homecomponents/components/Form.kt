@@ -340,12 +340,7 @@ fun Form(navController: NavHostController) {
                                 colorResource(id = R.color.red)
 
                         )
-
-
                     }
-
-
-
                 }
             }
         }

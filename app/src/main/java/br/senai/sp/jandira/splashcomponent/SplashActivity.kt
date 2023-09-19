@@ -54,7 +54,7 @@ fun Navigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "splash_screen"
+        startDestination = "menu_screen"
     ) {
         composable("splash_screen") {
             SplashScreen(navController = navController)

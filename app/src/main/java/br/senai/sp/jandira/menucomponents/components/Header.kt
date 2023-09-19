@@ -1,12 +1,16 @@
 package br.senai.sp.jandira.menucomponents.components
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -36,7 +40,7 @@ fun Header() {
     Row (
         modifier = Modifier
             .fillMaxWidth()
-            .padding(5.dp),
+            .padding(10.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ){
@@ -50,7 +54,8 @@ fun Header() {
         )
         Column (
             modifier = Modifier
-                .padding(end = 180.dp)
+                .absoluteOffset(x = -80.dp)
+
         ){
             TextoComTodosAtributos(
                 value = "Name Restaurant",
@@ -78,10 +83,9 @@ fun Header() {
 
         Row (
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .padding(
-                    top = 30.dp
-                )
+            modifier = Modifier.
+            padding(top = 30.dp)
+
         ){
             Icone(painter = painterResource(id = R.drawable.baseline_star_rate_24),
                 descricao = "",
@@ -93,7 +97,7 @@ fun Header() {
                 value = "4,5",
                 corTexto = colorResource(id = R.color.star_rate),
                 fontWeight = FontWeight(500),
-                fontSize = 6.sp
+                fontSize = 10.sp
             )
         }
     }

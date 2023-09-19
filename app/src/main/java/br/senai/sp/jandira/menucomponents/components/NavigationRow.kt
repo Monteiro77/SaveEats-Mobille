@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -26,6 +27,10 @@ import br.senai.sp.jandira.componentes.Icone
 
 @Composable
 fun NavigationRow(navController: NavController) {
+    var iconeState by remember{
+        mutableStateOf(false)
+    }
+
     Row (
         modifier = Modifier
             .fillMaxWidth()
@@ -34,15 +39,14 @@ fun NavigationRow(navController: NavController) {
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ){
-        var iconeState by remember{
-            mutableStateOf(false)
-        }
+
 
         Icone(
             painter = painterResource(id = R.drawable.baseline_arrow_back_24),
             descricao = "",
-            corIcone = colorResource(id = R.color.green_41),
+            corIcone = colorResource(id = R.color.icon_arrow),
             modifier = Modifier
+                .size(30.dp)
                 .clickable {
                     navController.navigate("home_screen")
                 }
