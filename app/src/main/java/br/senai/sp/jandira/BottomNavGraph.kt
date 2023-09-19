@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import br.senai.sp.jandira.historicocomponents.screen.HistoricoScreen
 import br.senai.sp.jandira.homecomponents.screen.HomeScreen
+import br.senai.sp.jandira.menucomponents.menu.screen.MenuScreen
 import br.senai.sp.jandira.profilecomponents.screen.ProfileScreen
 import br.senai.sp.jandira.receitascomponents.screen.ReceitasScreen
 
@@ -18,7 +19,7 @@ fun BottomNavGraph(navController: NavHostController) {
 
     ){
         composable(route = BottomBarScreen.Home.route){
-            HomeScreen(navController)
+            HomeScreen(navController = navController)
         }
         composable(route = BottomBarScreen.Historico.route){
             HistoricoScreen()
@@ -29,6 +30,10 @@ fun BottomNavGraph(navController: NavHostController) {
         composable(route = BottomBarScreen.Perfil.route){
             ProfileScreen()
         }
+        composable("menu_screen"){
+            MenuScreen(navController = navController)
+        }
+
     }
 
 }

@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "br.senai.sp.jandira"
-    compileSdkVersion(rootProject.extra["compileSdkVersion"] as Int)
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "br.senai.sp.jandira"

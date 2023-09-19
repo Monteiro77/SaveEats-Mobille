@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.menucomponents.components
+package br.senai.sp.jandira.menucomponents.menu.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import br.senai.sp.jandira.BottomBarScreen
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Icone
 
@@ -48,7 +49,7 @@ fun NavigationRow(navController: NavController) {
             modifier = Modifier
                 .size(30.dp)
                 .clickable {
-                    navController.navigate("home_screen")
+                    navController.navigate(BottomBarScreen.Home.route)
                 }
         )
 

@@ -262,7 +262,10 @@ fun Form(navController: NavHostController) {
                             spotColor = Color.Black,
                             ambientColor = Color.Black,
                             shape = RoundedCornerShape(5.dp)
-                        ),
+                        )
+                        .clickable {
+                                   navController.navigate("menu_screen")
+                        },
                     colors = CardDefaults.cardColors(
                         containerColor = colorResource(id = R.color.background)
                     )
@@ -287,9 +290,7 @@ fun Form(navController: NavHostController) {
                                 Text(
                                     text = "Restaurante Dois Irmãos",
                                     color = colorResource(id = R.color.name_restaurant),
-                                    modifier = Modifier.clickable {
-                                        navController.navigate("login_screen")
-                                    }
+
                                 )
                                 Row (
 

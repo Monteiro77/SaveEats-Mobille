@@ -24,7 +24,7 @@ import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.MainScreen
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
-import br.senai.sp.jandira.menucomponents.screen.MenuScreen
+import br.senai.sp.jandira.menucomponents.menu.screen.MenuScreen
 import br.senai.sp.jandira.singupcomponent.screen.FirstSignUpScreen
 import br.senai.sp.jandira.singupcomponent.screen.SecondSignUpScreen
 import br.senai.sp.jandira.ui.theme.theme.SaveEatsTheme
@@ -54,7 +54,7 @@ fun Navigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "menu_screen"
+        startDestination = "splash_screen"
     ) {
         composable("splash_screen") {
             SplashScreen(navController = navController)
@@ -78,6 +78,7 @@ fun Navigation() {
         composable("menu_screen"){
             MenuScreen(navController = navController)
         }
+
 
     }
 }
