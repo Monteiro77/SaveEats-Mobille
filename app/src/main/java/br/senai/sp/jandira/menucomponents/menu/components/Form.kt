@@ -1,6 +1,7 @@
 package br.senai.sp.jandira.menucomponents.menu.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,12 +26,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.TextoComTodosAtributos
 import br.senai.sp.jandira.componentes.TextoComTodosAtributosEModifier
 
 @Composable
-fun Form() {
+fun Form(navController: NavController) {
     Column(
         Modifier
             .fillMaxWidth()
@@ -58,6 +60,9 @@ fun Form() {
                 Card(
                     modifier = Modifier
                         .height(100.dp)
+                        .clickable {
+                            navController.navigate("product_screen")
+                        }
                 ) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically
@@ -73,9 +78,10 @@ fun Form() {
                                     ambientColor = Color(0x40000000)
                                 )
 
+
                         ) {
                             Image(
-                                painter = painterResource(id = R.drawable.breadslogo),
+                                painter = painterResource(id = R.drawable.coxinha),
                                 contentDescription = "",
                                 modifier = Modifier
                                     .size(80.dp)
@@ -115,5 +121,5 @@ fun Form() {
 @Preview(showBackground = true)
 @Composable
 fun FormPreview() {
-    Form()
+
 }

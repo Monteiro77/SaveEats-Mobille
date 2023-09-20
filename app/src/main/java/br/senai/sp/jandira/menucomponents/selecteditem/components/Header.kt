@@ -18,13 +18,14 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Icone
 import br.senai.sp.jandira.componentes.Imagem
 
 
 @Composable
-fun Header() {
+fun Header(navController: NavController) {
     Box(
         modifier = Modifier
             .height(290.dp)
@@ -42,7 +43,9 @@ fun Header() {
             modifier = Modifier
                 .padding(top = 10.dp, start = 10.dp)
                 .size(30.dp)
-                .clickable {  }
+                .clickable {
+                    navController.navigate("menu_screen")
+                }
         )
     }
 
@@ -51,5 +54,5 @@ fun Header() {
 @Preview
 @Composable
 fun HeaderPreview() {
-    Header()
+
 }

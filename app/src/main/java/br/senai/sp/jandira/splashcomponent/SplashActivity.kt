@@ -25,6 +25,7 @@ import br.senai.sp.jandira.MainScreen
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
 import br.senai.sp.jandira.menucomponents.menu.screen.MenuScreen
+import br.senai.sp.jandira.restaurantprofilecomponent.screen.RestaurantProfileScreen
 import br.senai.sp.jandira.singupcomponent.screen.FirstSignUpScreen
 import br.senai.sp.jandira.singupcomponent.screen.SecondSignUpScreen
 import br.senai.sp.jandira.ui.theme.theme.SaveEatsTheme
@@ -78,6 +79,7 @@ fun Navigation() {
         composable("menu_screen"){
             MenuScreen(navController = navController)
         }
+
 
 
     }

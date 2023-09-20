@@ -17,7 +17,7 @@ import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.menucomponents.menu.components.Form
 import br.senai.sp.jandira.menucomponents.menu.components.Header
-import br.senai.sp.jandira.menucomponents.menu.components.NavigationRow
+import br.senai.sp.jandira.componentes.NavigationRow
 
 @Composable
 fun MenuScreen(navController: NavHostController) {
@@ -38,16 +38,16 @@ fun MenuScreen(navController: NavHostController) {
 //                    )
 
         ) {
-            NavigationRow(navController = navController)
+            NavigationRow(navController = navController, navigation = "home_screen")
             Surface(
                 modifier = Modifier
                     .fillMaxSize()
                     .clip(RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp))
             ) {
                 Column {
-                    Header()
+                    Header(navController = navController)
                     Spacer(modifier = Modifier.height(20.dp))
-                    Form()
+                    Form(navController = navController)
 
                 }
 

@@ -60,6 +60,8 @@ fun Form(navController: NavHostController) {
         mutableStateOf(false)
     }
 
+
+
     
     Column {
         Column {
@@ -144,6 +146,8 @@ fun Form(navController: NavHostController) {
                 )
             }
 
+
+
             val pagerState = rememberPagerState(
                 pageCount = {
                     3
@@ -209,9 +213,17 @@ fun Form(navController: NavHostController) {
                     modifier = Modifier
                         .width(7.dp)
                         .height(7.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = colorResource(id = R.color.green_splash)
-                    )
+                    colors = if(pagerState.currentPage == 0){
+                        CardDefaults.cardColors(
+                       containerColor = colorResource(id = R.color.green_splash)
+                        )
+                    }else{
+                        CardDefaults.cardColors(
+                            containerColor = colorResource(id = R.color.background)
+                        )
+                    }
+//                    colors =
+//                    )
                 ) {
 
                 }
@@ -219,9 +231,15 @@ fun Form(navController: NavHostController) {
                     modifier = Modifier
                         .width(7.dp)
                         .height(7.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = colorResource(id = R.color.background)
-                    )
+                    colors = if(pagerState.currentPage == 1){
+                        CardDefaults.cardColors(
+                            containerColor = colorResource(id = R.color.green_splash)
+                        )
+                    }else{
+                        CardDefaults.cardColors(
+                            containerColor = colorResource(id = R.color.background)
+                        )
+                    }
 
                 ){
 
@@ -230,9 +248,15 @@ fun Form(navController: NavHostController) {
                     modifier = Modifier
                         .width(7.dp)
                         .height(7.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = colorResource(id = R.color.background)
-                    )
+                    colors = if(pagerState.currentPage == 2){
+                        CardDefaults.cardColors(
+                            containerColor = colorResource(id = R.color.green_splash)
+                        )
+                    }else{
+                        CardDefaults.cardColors(
+                            containerColor = colorResource(id = R.color.background)
+                        )
+                    }
                 ){
 
                 }

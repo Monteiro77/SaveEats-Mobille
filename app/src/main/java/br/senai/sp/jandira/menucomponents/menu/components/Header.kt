@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Icone
 import br.senai.sp.jandira.componentes.Imagem
@@ -27,7 +29,7 @@ import br.senai.sp.jandira.componentes.TextoComTodosAtributos
 import br.senai.sp.jandira.componentes.TextoComTodosAtributosEModifier
 
 @Composable
-fun Header() {
+fun Header(navController: NavController) {
 
     Row (
         modifier = Modifier
@@ -65,9 +67,13 @@ fun Header() {
                     .clickable {  }
             )
 
-            TextoComTodosAtributos(
-                value = "Restaurant Profile",
-                corTexto = colorResource(id = R.color.green_41),
+            Text(
+                text = "Resutant profile",
+                modifier = Modifier
+                    .clickable {
+                        navController.navigate("restaurant_profile_screen")
+                    },
+                color = colorResource(id = R.color.green_41),
                 fontWeight = FontWeight(600),
                 fontSize = 10.sp
             )
@@ -98,5 +104,5 @@ fun Header() {
 @Preview(showBackground = true)
 @Composable
 fun HeaderPreview() {
-    Header()
+
 }

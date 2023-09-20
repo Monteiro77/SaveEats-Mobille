@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.menucomponents.menu.components
+package br.senai.sp.jandira.componentes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -27,7 +27,10 @@ import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Icone
 
 @Composable
-fun NavigationRow(navController: NavController) {
+fun NavigationRow(
+    navController: NavController,
+    navigation: String
+) {
     var iconeState by remember{
         mutableStateOf(false)
     }
@@ -49,7 +52,7 @@ fun NavigationRow(navController: NavController) {
             modifier = Modifier
                 .size(30.dp)
                 .clickable {
-                    navController.navigate(BottomBarScreen.Home.route)
+                    navController.navigate(navigation)
                 }
         )
 
