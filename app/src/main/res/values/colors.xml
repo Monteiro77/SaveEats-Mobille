@@ -21,4 +21,5 @@
     <color name="menu_background">#56A92C</color>
     <color name="icon_arrow">#0A2004</color>
     <color name="green_31">#5DB631</color>
+    <color name="progressbar">#DADADA</color>
 </resources>

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -26,7 +27,11 @@ import br.senai.sp.jandira.componentes.TextoComTodosAtributos
 @Composable
 fun Header () {
 
-    Column(Modifier.fillMaxWidth()){
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+    ){
         Row (
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
@@ -59,7 +64,45 @@ fun Header () {
             }
         Row {
 
+            TextoComTodosAtributos(
+                value = "4,0",
+                corTexto = colorResource(id = R.color.star_rate),
+                fontWeight = FontWeight(400),
+                fontSize = 15.sp
+            )
+
+            Icon(
+                painter = painterResource(id = R.drawable.baseline_star_rate_24),
+                contentDescription = "",
+                tint = colorResource(id = R.color.star_rate)
+            )
+            Icon(
+                painter = painterResource(id = R.drawable.baseline_star_rate_24),
+                contentDescription = "",
+                tint = colorResource(id = R.color.star_rate)
+            )
+            Icon(
+                painter = painterResource(id = R.drawable.baseline_star_rate_24),
+                contentDescription = "",
+                tint = colorResource(id = R.color.star_rate)
+            )
+            Icon(
+                painter = painterResource(id = R.drawable.baseline_star_rate_24),
+                contentDescription = "",
+                tint = colorResource(id = R.color.star_rate)
+            )
+            Icon(
+                painter = painterResource(id = R.drawable.baseline_star_border_24),
+                contentDescription = ""
+            )
         }
+
+        TextoComTodosAtributos(
+            value = "355 avaliações",
+            corTexto = colorResource(id = R.color.black),
+            fontWeight = FontWeight(300),
+            fontSize = 14.sp
+        )
     }
 
 }

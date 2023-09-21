@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.componentes.NavigationRow
+import br.senai.sp.jandira.restaurantprofilecomponent.components.Form
 import br.senai.sp.jandira.restaurantprofilecomponent.components.Header
 
 @Composable
@@ -15,6 +16,7 @@ fun RestaurantProfileScreen(navController: NavHostController) {
         Column {
             NavigationRow(navController = navController, navigation = "menu_screen")
             Header()
+            Form()
         }
     }
 }

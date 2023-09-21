@@ -14,6 +14,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import br.senai.sp.jandira.BottomBarScreen
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.menucomponents.menu.components.Form
 import br.senai.sp.jandira.menucomponents.menu.components.Header
@@ -38,7 +39,7 @@ fun MenuScreen(navController: NavHostController) {
 //                    )
 
         ) {
-            NavigationRow(navController = navController, navigation = "home_screen")
+            NavigationRow(navController = navController, navigation = BottomBarScreen.Home.route)
             Surface(
                 modifier = Modifier
                     .fillMaxSize()

@@ -2,6 +2,7 @@ package br.senai.sp.jandira.menucomponents.menu.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -59,12 +60,14 @@ fun Form(navController: NavController) {
             items(10) {
                 Card(
                     modifier = Modifier
-                        .height(100.dp)
+                        .height(110.dp)
                         .clickable {
                             navController.navigate("product_screen")
                         }
                 ) {
                     Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Card(
@@ -87,6 +90,9 @@ fun Form(navController: NavController) {
                                     .size(80.dp)
                             )
                         }
+
+                        Spacer(modifier = Modifier.width(15.dp))
+
                         Column(
                             modifier = Modifier
                                 .fillMaxWidth()
