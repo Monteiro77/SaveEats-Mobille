@@ -84,4 +84,7 @@ dependencies {
 
     //Implementacao do bottom navigation
     implementation ("androidx.compose.material:material:1.4.2")
+
+    //Mais icons
+    implementation ("androidx.compose.material:material-icons-extended:compose_version")
 }
