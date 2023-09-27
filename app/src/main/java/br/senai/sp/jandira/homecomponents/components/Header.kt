@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.homecomponents.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,13 +24,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.CaixaDeTexto
 import br.senai.sp.jandira.componentes.Imagem
 import br.senai.sp.jandira.ui.theme.fontFamily
 
 @Composable
-fun Header() {
+fun Header(
+    navController: NavController,
+    navController2: NavHostController
+) {
 
     var searchState by remember{
         mutableStateOf("")
@@ -73,7 +79,8 @@ fun Header() {
 
             Icon(
                 modifier = Modifier
-                    .size(30.dp),
+                    .size(30.dp)
+                    .clickable { navController2.navigate("cart_screen") },
                 painter = painterResource(id = R.drawable.outline_shopping_cart_24),
                 contentDescription = "",
                 tint = colorResource(id = R.color.green_splash)
@@ -97,8 +104,3 @@ fun Header() {
     }
 }
 
-@Preview(showSystemUi = true)
-@Composable
-fun HeaderPreview() {
-    Header()
-}

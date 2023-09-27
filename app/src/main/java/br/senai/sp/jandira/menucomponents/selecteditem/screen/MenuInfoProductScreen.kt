@@ -7,28 +7,23 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.menucomponents.selecteditem.components.Form
 import br.senai.sp.jandira.menucomponents.selecteditem.components.Header
 
 @Composable
-fun MenuInfoProductScreen(navController: NavHostController) {
+fun MenuInfoProductScreen(
+    navController: NavHostController
+) {
     Surface(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
 
     ){
         Column (){
-            Header(navController = navController)
+            Header(navController)
             Form()
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun MenuInfoProductPreview() {
-
-
-
 }

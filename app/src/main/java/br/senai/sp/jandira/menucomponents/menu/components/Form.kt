@@ -28,12 +28,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.TextoComTodosAtributos
 import br.senai.sp.jandira.componentes.TextoComTodosAtributosEModifier
 
 @Composable
-fun Form(navController: NavController) {
+fun Form(
+    navController2: NavHostController
+) {
     Column(
         Modifier
             .fillMaxWidth()
@@ -62,7 +65,7 @@ fun Form(navController: NavController) {
                     modifier = Modifier
                         .height(110.dp)
                         .clickable {
-                            navController.navigate("product_screen")
+                            navController2.navigate("product_screen")
                         }
                 ) {
                     Row(

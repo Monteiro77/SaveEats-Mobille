@@ -11,13 +11,16 @@ import br.senai.sp.jandira.homecomponents.components.Form
 import br.senai.sp.jandira.homecomponents.components.Header
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(
+    navController: NavHostController,
+    navController2: NavHostController
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        Header()
-        Form(navController = navController)
+        Header(navController, navController2)
+        Form(navController = navController, navController2)
 
 
     }

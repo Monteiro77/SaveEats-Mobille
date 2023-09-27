@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Icone
 import br.senai.sp.jandira.componentes.Imagem
@@ -29,7 +30,10 @@ import br.senai.sp.jandira.componentes.TextoComTodosAtributos
 import br.senai.sp.jandira.componentes.TextoComTodosAtributosEModifier
 
 @Composable
-fun Header(navController: NavController) {
+fun Header(
+        navController: NavController,
+        navController2: NavController
+) {
 
     Row (
         modifier = Modifier

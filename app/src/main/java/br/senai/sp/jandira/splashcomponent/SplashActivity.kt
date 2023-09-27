@@ -23,8 +23,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.MainScreen
 import br.senai.sp.jandira.R
+import br.senai.sp.jandira.cartcomponents.screen.CartScreen
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
 import br.senai.sp.jandira.menucomponents.menu.screen.MenuScreen
+import br.senai.sp.jandira.menucomponents.selecteditem.screen.MenuInfoProductScreen
 import br.senai.sp.jandira.restaurantprofilecomponent.screen.RestaurantProfileScreen
 import br.senai.sp.jandira.singupcomponent.screen.FirstSignUpScreen
 import br.senai.sp.jandira.singupcomponent.screen.SecondSignUpScreen
@@ -53,6 +55,8 @@ fun Navigation() {
 
     val navController = rememberNavController()
 
+
+
     NavHost(
         navController = navController,
         startDestination = "splash_screen"
@@ -74,10 +78,19 @@ fun Navigation() {
         }
 
         composable("home_screen"){
-            MainScreen(navController = navController)
+            MainScreen(navController2 = navController)
+        }
+        composable("cart_screen"){
+            CartScreen()
         }
         composable("menu_screen"){
-            MenuScreen(navController = navController)
+            MenuScreen(navController = navController, navController2 = navController)
+        }
+        composable("product_screen"){
+            MenuInfoProductScreen(navController = navController)
+        }
+        composable("restaurant_profile_screen"){
+            RestaurantProfileScreen(navController = navController)
         }
 
 

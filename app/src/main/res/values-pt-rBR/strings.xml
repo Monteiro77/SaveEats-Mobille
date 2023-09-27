@@ -30,4 +30,5 @@
     <string name="city">Cidade</string>
     <string name="street">Rua</string>
     <string name="number_street">Numero</string>
+    <string name="cart">Carrinho de Compras</string>
 </resources>

@@ -27,9 +27,6 @@ import br.senai.sp.jandira.logincomponent.components.Form
 @Composable
 fun LoginScreen(navController: NavHostController) {
 
-
-
-
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {

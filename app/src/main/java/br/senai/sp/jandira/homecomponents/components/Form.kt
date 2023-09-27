@@ -54,7 +54,10 @@ import br.senai.sp.jandira.ui.theme.fontFamily
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Form(navController: NavHostController) {
+fun Form(
+    navController: NavHostController,
+    navController2: NavHostController
+    ) {
 
     var iconState by remember{
         mutableStateOf(false)
@@ -288,7 +291,7 @@ fun Form(navController: NavHostController) {
                             shape = RoundedCornerShape(5.dp)
                         )
                         .clickable {
-                                   navController.navigate("menu_screen")
+                                   navController2.navigate("menu_screen")
                         },
                     colors = CardDefaults.cardColors(
                         containerColor = colorResource(id = R.color.background)

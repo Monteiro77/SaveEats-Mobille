@@ -21,7 +21,10 @@ import br.senai.sp.jandira.menucomponents.menu.components.Header
 import br.senai.sp.jandira.componentes.NavigationRow
 
 @Composable
-fun MenuScreen(navController: NavHostController) {
+fun MenuScreen(
+    navController: NavHostController,
+    navController2: NavHostController
+) {
 
     Surface(
         modifier = Modifier
@@ -39,16 +42,16 @@ fun MenuScreen(navController: NavHostController) {
 //                    )
 
         ) {
-            NavigationRow(navController = navController, navigation = BottomBarScreen.Home.route)
+            NavigationRow(navController = navController, navigation = "home_screen")
             Surface(
                 modifier = Modifier
                     .fillMaxSize()
                     .clip(RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp))
             ) {
                 Column {
-                    Header(navController = navController)
+                    Header(navController, navController2)
                     Spacer(modifier = Modifier.height(20.dp))
-                    Form(navController = navController)
+                    Form(navController2)
 
                 }
 
@@ -62,8 +65,3 @@ fun MenuScreen(navController: NavHostController) {
 }
 
 
-@Preview(showSystemUi = true)
-@Composable
-fun MenuScreenPreview() {
-
-}
