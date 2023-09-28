@@ -122,7 +122,6 @@ fun Form() {
 //
 //        ProgressBar(text1 = "Avaliações", text2 = "Informações", valor = 200)
         if (progressState == true) {
-
             Avaliacoes()
         } else {
             InformacoesRestaurante()

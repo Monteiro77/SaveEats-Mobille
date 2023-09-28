@@ -31,5 +31,6 @@
     <string name="street">Street</string>
     <string name="number_street">Number</string>
     <string name="cart">Cart</string>
+    <string name="menu">Menu</string>
 
 </resources>

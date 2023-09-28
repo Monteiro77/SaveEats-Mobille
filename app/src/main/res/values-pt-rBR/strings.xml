@@ -31,4 +31,5 @@
     <string name="street">Rua</string>
     <string name="number_street">Numero</string>
     <string name="cart">Carrinho de Compras</string>
+    <string name="menu">Cardápio</string>
 </resources>
