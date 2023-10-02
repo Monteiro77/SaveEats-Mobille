@@ -24,6 +24,7 @@ import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.MainScreen
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.cartcomponents.screen.CartScreen
+import br.senai.sp.jandira.cartcomponents.screen.FinishOrder
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
 import br.senai.sp.jandira.menucomponents.menu.screen.MenuScreen
 import br.senai.sp.jandira.menucomponents.selecteditem.screen.MenuInfoProductScreen
@@ -81,7 +82,7 @@ fun Navigation() {
             MainScreen(navController2 = navController)
         }
         composable("cart_screen"){
-            CartScreen()
+            CartScreen(navController)
         }
         composable("menu_screen"){
             MenuScreen(navController = navController, navController2 = navController)
@@ -91,6 +92,9 @@ fun Navigation() {
         }
         composable("restaurant_profile_screen"){
             RestaurantProfileScreen(navController = navController)
+        }
+        composable("finish_order_screen"){
+            FinishOrder(navController = navController)
         }
 
 

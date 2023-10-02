@@ -21,6 +21,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -40,15 +42,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
+import br.senai.sp.jandira.cartcomponents.component.Header
 import br.senai.sp.jandira.componentes.Icone
 import br.senai.sp.jandira.componentes.Imagem
 import br.senai.sp.jandira.componentes.TextoComTodosAtributos
 import br.senai.sp.jandira.componentes.TextoComTodosAtributosEModifier
 
 @Composable
-fun CartScreen() {
+fun CartScreen(navController: NavHostController) {
 
-    var unidadeState by remember{
+    var unidadeState by remember {
         mutableStateOf(1)
     }
 
@@ -58,199 +61,109 @@ fun CartScreen() {
             .background(colorResource(id = R.color.white))
 
     ) {
+
+
+
         Column {
-            Column (
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ){
-                Row (
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Start
-                ){
-
-                    Icone(
-                        painter = painterResource(id = R.drawable.baseline_arrow_back_24),
-                        descricao = "",
-                        corIcone = colorResource(id = R.color.green_41),
+            Header(
+                navController = navController, navigation = "home_screen"
+            )
+            LazyColumn() {
+                items(7) {
+                    Card(
                         modifier = Modifier
-                            .size(25.dp)
-                            .clickable { }
-                    )
-                    Row (
-                        modifier = Modifier
-                            .fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Center
+                            .height(140.dp)
+                            .fillMaxWidth()
+                            .padding(12.dp)
+                            .shadow(
+                                elevation = 2.dp,
+                                spotColor = Color(0xFF000000),
+                                ambientColor = Color(0xFF000000),
+                                shape = RoundedCornerShape(10.dp)
+                            ), colors = CardDefaults.cardColors(
+                            colorResource(id = R.color.card_cart_background)
+                        ), shape = RoundedCornerShape(10.dp)
                     ) {
-
-
-                        TextoComTodosAtributos(
-                            value = stringResource(id = R.string.cart),
-                            corTexto = colorResource(id = R.color.green_41),
-                            fontWeight = FontWeight(600),
-                            fontSize = 20.sp
-                        )
-                    }
-                }
-                Spacer(modifier = Modifier.height(20.dp))
-
-                Row (
-                    modifier = Modifier
-                        .height(2.dp)
-                        .width(400.dp)
-                        .background(colorResource(id = R.color.green_41))
-                        .clip(RoundedCornerShape(100))
-                ){
-
-                }
-            }
-
-
-            Column {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Imagem(
-                        painter = painterResource(id = R.drawable.breadslogo),
-                        descricao = "",
-                        modifier = Modifier
-                            .clip(CircleShape)
-                            .size(60.dp)
-
-                    )
-                    Column(
-                        modifier = Modifier
-                            .absoluteOffset(x = -190.dp)
-
-                    ) {
-                        TextoComTodosAtributos(
-                            value = "Name Restaurant",
-                            corTexto = Color(29, 34, 27),
-                            fontWeight = FontWeight(600),
-                            fontSize = 15.sp
-                        )
-
-                        TextoComTodosAtributosEModifier(
-                            value = stringResource(id = R.string.menu),
-                            corTexto = colorResource(id = R.color.green_41),
-                            fontWeight = FontWeight(300),
-                            fontSize = 10.sp,
-                            modifier = Modifier
-                                .clickable { }
-                        )
-                    }
-                }
-
-                LazyColumn(){
-                    items(7){
-                        Card(
-                            modifier = Modifier
-                                .height(130.dp)
-                                .fillMaxWidth()
-                                .padding(10.dp)
-                                .shadow(
-                                    elevation = 2.dp,
-                                    spotColor = Color(0xFF000000),
-                                    ambientColor = Color(0xFF000000),
-                                    shape = RoundedCornerShape(32.dp)
-                                ),
-                            colors = CardDefaults.cardColors(
-                                colorResource(id = R.color.card_cart_background)
-                            ),
-                            shape = RoundedCornerShape(10.dp)
+                        Column(
+                            modifier = Modifier.fillMaxSize()
                         ) {
-                            Column(
+                            Row(
                                 modifier = Modifier
-                                    .fillMaxSize()
+                                    .fillMaxWidth()
+                                    .height(70.dp)
+                                    .padding(5.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
                             ) {
-                                Row (
+                                Imagem(
+                                    painter = painterResource(id = R.drawable.coxinha),
+                                    descricao = "",
                                     modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(70.dp)
+                                        .size(60.dp)
+                                        .clip(RoundedCornerShape(100))
+                                )
+                                Column(modifier = Modifier.absoluteOffset(x = -80.dp)) {
+                                    TextoComTodosAtributos(
+                                        value = "Coxinha",
+                                        corTexto = colorResource(id = R.color.black),
+                                        fontWeight = FontWeight(400),
+                                        fontSize = 18.sp
+                                    )
+                                    TextoComTodosAtributos(
+                                        value = "3 unidades - R$4,50",
+                                        corTexto = colorResource(id = R.color.black),
+                                        fontWeight = FontWeight(300),
+                                        fontSize = 12.sp
+                                    )
+                                }
+
+                                Icone(
+                                    painter = painterResource(id = R.drawable.outline_delete_24),
+                                    descricao = "",
+                                    corIcone = colorResource(id = R.color.black),
+                                    modifier = Modifier.size(25.dp)
+                                )
+
+                            }
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(3.dp),
+                                horizontalArrangement = Arrangement.End
+                            ) {
+                                Row(
+                                    modifier = Modifier
+                                        .height(30.dp)
+                                        .width(75.dp)
+                                        .background(
+                                            colorResource(id = R.color.greenTextField),
+                                            shape = RoundedCornerShape(100)
+                                        )
                                         .padding(5.dp),
                                     verticalAlignment = Alignment.CenterVertically,
                                     horizontalArrangement = Arrangement.SpaceBetween
-                                ){
-                                    Imagem(
-                                        painter = painterResource(id = R.drawable.coxinha),
+
+                                ) {
+                                    Icone(painter = painterResource(id = R.drawable.baseline_remove_24),
                                         descricao = "",
+                                        corIcone = colorResource(R.color.white),
                                         modifier = Modifier
-                                            .size(60.dp)
-                                            .clip(RoundedCornerShape(100))
+                                            .clickable { unidadeState-- }
+                                            .size(17.dp))
+
+                                    TextoComTodosAtributos(
+                                        value = "${unidadeState}",
+                                        corTexto = colorResource(id = R.color.white),
+                                        fontWeight = null,
+                                        fontSize = 15.sp
                                     )
-                                    Column (modifier = Modifier.absoluteOffset(x = -80.dp)){
-                                        TextoComTodosAtributos(
-                                            value = "Coxinha",
-                                            corTexto = colorResource(id = R.color.black),
-                                            fontWeight = FontWeight(400),
-                                            fontSize = 18.sp
-                                        )
-                                        TextoComTodosAtributos(
-                                            value = "3 unidades - R$4,50",
-                                            corTexto = colorResource(id = R.color.black),
-                                            fontWeight = FontWeight(300),
-                                            fontSize = 12.sp
-                                        )
-                                    }
-                                    
-                                    Icone(
-                                        painter = painterResource(id = R.drawable.outline_delete_24),
+                                    Icone(painter = painterResource(id = R.drawable.baseline_add_24),
                                         descricao = "",
-                                        corIcone = colorResource(id = R.color.black),
-                                        modifier = Modifier.size(25.dp)
-                                    )
-
-                                }
-                                Row (
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(3.dp)
-                                    ,
-                                    horizontalArrangement = Arrangement.End
-                                ){
-                                    Row (
+                                        corIcone = colorResource(id = R.color.white),
                                         modifier = Modifier
-                                            .height(30.dp)
-                                            .width(75.dp)
-                                            .background(
-                                                colorResource(id = R.color.greenTextField),
-                                                shape = RoundedCornerShape(100)
-                                            )
-                                            .padding(5.dp),
-                                        verticalAlignment = Alignment.CenterVertically,
-                                        horizontalArrangement = Arrangement.SpaceBetween
+                                            .clickable { unidadeState++ }
+                                            .size(17.dp))
 
-                                    ){
-                                        Icone(
-                                            painter = painterResource(id = R.drawable.baseline_remove_24),
-                                            descricao = "",
-                                            corIcone = colorResource(R.color.white),
-                                            modifier = Modifier
-                                                .clickable { unidadeState-- }
-                                                .size(17.dp)
-                                        )
-
-                                        TextoComTodosAtributos(
-                                            value = "${unidadeState}",
-                                            corTexto = colorResource(id = R.color.white),
-                                            fontWeight = null,
-                                            fontSize = 15.sp
-                                        )
-                                        Icone(
-                                            painter = painterResource(id = R.drawable.baseline_add_24),
-                                            descricao = "",
-                                            corIcone = colorResource(id = R.color.white),
-                                            modifier = Modifier
-                                                .clickable { unidadeState++ }
-                                                .size(17.dp)
-                                        )
-
-                                    }
                                 }
                             }
                         }
@@ -265,16 +178,16 @@ fun CartScreen() {
                 .height(150.dp)
                 .absoluteOffset(y = 660.dp)
                 .clip(RoundedCornerShape(topStart = 25.dp, topEnd = 25.dp))
-                .background(Color(230, 233, 240)),
+                .background(Color(255, 255, 255, 255)),
 
-        ) {
-            Column (
+            ) {
+            Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
-            ){
-                Row (modifier = Modifier.fillMaxWidth()){
+            ) {
+                Row(modifier = Modifier.fillMaxWidth()) {
                     TextoComTodosAtributos(
                         value = "Resumo de valores",
                         corTexto = colorResource(id = R.color.green_41),
@@ -290,11 +203,10 @@ fun CartScreen() {
                     verticalArrangement = Arrangement.SpaceBetween
 
                 ) {
-                    Row (
-                        modifier = Modifier
-                            .fillMaxWidth(),
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
-                    ){
+                    ) {
                         TextoComTodosAtributos(
                             value = "SubTotal",
                             corTexto = colorResource(id = R.color.gray),
@@ -310,9 +222,10 @@ fun CartScreen() {
                         )
 
                     }
-                    Row (modifier = Modifier
-                        .fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween){
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
 
                         TextoComTodosAtributos(
                             value = "Taxa de Entrega",
@@ -329,9 +242,10 @@ fun CartScreen() {
                         )
 
                     }
-                    Row (modifier = Modifier
-                        .fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween){
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
 
                         TextoComTodosAtributos(
                             value = "Total",
@@ -351,9 +265,10 @@ fun CartScreen() {
                 }
 
                 Button(
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(
-                        colorResource(id = R.color.greenTextField)
+                    onClick = {
+                              navController.navigate("finish_order_screen")
+                    }, colors = ButtonDefaults.buttonColors(
+                        colorResource(id = R.color.green_button)
                     )
                 ) {
                     TextoComTodosAtributos(
@@ -362,7 +277,7 @@ fun CartScreen() {
                         fontWeight = null,
                         fontSize = 15.sp
                     )
-                    
+
                 }
             }
 
@@ -370,11 +285,11 @@ fun CartScreen() {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun CartScreenPreview() {
-
-    CartScreen()
-
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun CartScreenPreview() {
+//
+//    CartScreen()
+//
+//}
 

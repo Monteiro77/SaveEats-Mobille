@@ -14,18 +14,12 @@ import br.senai.sp.jandira.R
 @Composable
 fun LinearGradient(): Brush {
  val gradient = Brush.linearGradient(
-  0.01f to colorResource(id = R.color.green_splash),
+  0.01f to colorResource(id = R.color.black),
   .8f to Color.White,
   start = Offset(.1f, .1f),
   end = Offset.Infinite,
  )
 
- Box(
-  modifier = Modifier
-   .background(gradient)
- ) {
-
- }
  return gradient
 
 }
