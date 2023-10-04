@@ -32,4 +32,14 @@
     <string name="number_street">Numero</string>
     <string name="cart">Carrinho de Compras</string>
     <string name="menu">Cardápio</string>
+    <string name="adress">Endereço</string>
+    <string name="order_status">Status de Pedido</string>
+    <string name="payment_method">Forma de Pagamento</string>
+    <string name="change">Trocar</string>
+    <string name="subtotal">SubTotal</string>
+    <string name="values_summary">Resumo de valores</string>
+    <string name="delivery_fee">Taxa de entrega</string>
+    <string name="cofirm_delivery">Confirmar Pedido</string>
+    <string name="deliver_in">Entregar em</string>
+    <string name="confirm">Confirmar</string>
 </resources>

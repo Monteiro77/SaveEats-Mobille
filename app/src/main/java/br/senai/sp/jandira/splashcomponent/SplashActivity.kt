@@ -28,6 +28,7 @@ import br.senai.sp.jandira.cartcomponents.screen.FinishOrder
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
 import br.senai.sp.jandira.menucomponents.menu.screen.MenuScreen
 import br.senai.sp.jandira.menucomponents.selecteditem.screen.MenuInfoProductScreen
+import br.senai.sp.jandira.ordercomponents.screen.TrackOrderScreen
 import br.senai.sp.jandira.restaurantprofilecomponent.screen.RestaurantProfileScreen
 import br.senai.sp.jandira.singupcomponent.screen.FirstSignUpScreen
 import br.senai.sp.jandira.singupcomponent.screen.SecondSignUpScreen
@@ -95,6 +96,9 @@ fun Navigation() {
         }
         composable("finish_order_screen"){
             FinishOrder(navController = navController)
+        }
+        composable("track_order_screen"){
+            TrackOrderScreen()
         }
 
 

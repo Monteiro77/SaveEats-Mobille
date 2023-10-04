@@ -24,4 +24,6 @@
     <color name="green_button">#52A13E</color>
     <color name="progressbar">#DADADA</color>
     <color name="card_cart_background">#EEEEEE</color>
+    <color name="card_finish_order">#90AE6E</color>
+    <color name="background_card_track_order">#D6D3D3</color>
 </resources>
