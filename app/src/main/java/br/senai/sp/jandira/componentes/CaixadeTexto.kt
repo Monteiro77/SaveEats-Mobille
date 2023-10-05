@@ -62,6 +62,40 @@ fun CaixaDeTexto(
 
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun CaixaDeTextoSemIcon(
+    value: String,
+    aoMudar: (String) -> Unit,
+    corBorda: Color,
+    shape: Shape,
+    label: String,
+    modifier: Modifier
+
+): Unit {
+
+    OutlinedTextField(
+
+        value = value,
+        onValueChange = {
+            aoMudar(it)
+        },
+        colors = TextFieldDefaults.outlinedTextFieldColors(
+            focusedBorderColor = corBorda,
+            unfocusedBorderColor = corBorda),
+        shape = shape,
+        label = {
+            Text(
+                text = label,
+                color = colorResource(id = R.color.icon)
+            )
+        },
+        modifier = modifier
+    )
+
+
+}
+
 
 
 //@Preview(showBackground = true)

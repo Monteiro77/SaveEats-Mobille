@@ -313,7 +313,7 @@ fun TrackOrderScreen(navController: NavController) {
                            fontWeight = FontWeight(500),
                            fontSize = 13.sp,
                            modifier = Modifier
-                               .clickable {  }
+                               .clickable { navController.navigate("menu_screen") }
                        )
 
 
@@ -469,7 +469,7 @@ fun TrackOrderScreen(navController: NavController) {
 
             ) {
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = { navController.navigate("avaliation_screen")},
                     modifier = Modifier
                         .height(50.dp)
                         .width(200.dp),

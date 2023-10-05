@@ -45,7 +45,7 @@ fun Header(navController: NavController) {
                 .padding(top = 10.dp, start = 10.dp)
                 .size(30.dp)
                 .clickable {
-                    navController.navigate("menu_screen")
+                    navController.popBackStack()
                 }
         )
     }

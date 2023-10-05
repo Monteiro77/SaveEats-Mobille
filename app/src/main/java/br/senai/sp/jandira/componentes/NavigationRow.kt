@@ -52,7 +52,7 @@ fun NavigationRow(
             modifier = Modifier
                 .size(30.dp)
                 .clickable {
-                    navController.navigate(navigation)
+                    navController.popBackStack()
                 }
         )
 

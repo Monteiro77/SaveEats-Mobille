@@ -23,6 +23,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.MainScreen
 import br.senai.sp.jandira.R
+import br.senai.sp.jandira.avaliationcomponents.screen.AvaliationScreen
 import br.senai.sp.jandira.cartcomponents.screen.CartScreen
 import br.senai.sp.jandira.cartcomponents.screen.FinishOrder
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
@@ -61,7 +62,7 @@ fun Navigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "track_order_screen"
+        startDestination = "avaliation_screen"
     ) {
         composable("splash_screen") {
             SplashScreen(navController = navController)
@@ -100,6 +101,10 @@ fun Navigation() {
         composable("track_order_screen"){
             TrackOrderScreen(navController = navController)
         }
+        composable("avaliation_screen"){
+            AvaliationScreen(navController = navController)
+        }
+
 
 
 
