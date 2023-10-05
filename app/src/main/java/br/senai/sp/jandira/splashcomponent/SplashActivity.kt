@@ -61,7 +61,7 @@ fun Navigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "splash_screen"
+        startDestination = "track_order_screen"
     ) {
         composable("splash_screen") {
             SplashScreen(navController = navController)
@@ -98,7 +98,7 @@ fun Navigation() {
             FinishOrder(navController = navController)
         }
         composable("track_order_screen"){
-            TrackOrderScreen()
+            TrackOrderScreen(navController = navController)
         }
 
 
