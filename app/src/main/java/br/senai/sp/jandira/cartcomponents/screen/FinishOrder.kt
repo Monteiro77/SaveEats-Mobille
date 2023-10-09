@@ -581,7 +581,7 @@ fun FinishOrder(navController: NavController) {
 
 
                     Button(
-                        onClick = { navController.navigate("track_order_screen") },
+                        onClick = { navController.navigate("loading_screen") },
                         colors =    ButtonDefaults
                             .buttonColors(
                                 colorResource(id = R.color.white)

@@ -79,6 +79,30 @@ fun TextoBranco(
 }
 
 
+@Composable
+fun TextoComLineHeight(
+    value: String,
+    corTexto: Color,
+    fontWeight: FontWeight?,
+    fontSize: TextUnit,
+    lineHeight: TextUnit
+
+
+): Unit {
+
+    Text(
+        text = value,
+        fontFamily = fontFamily,
+        color = corTexto,
+        fontWeight = fontWeight,
+        fontSize = fontSize,
+        lineHeight = lineHeight
+    )
+
+}
+
+
+
 
 @Preview(showBackground = true)
 @Composable

@@ -9,11 +9,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.R
@@ -28,7 +31,7 @@ fun InformacoesRestaurante() {
             .padding(20.dp)
     ) {
         Column {
-            Row {
+            Row(verticalAlignment = Alignment.CenterVertically) {
                 Icone(
                     painter = painterResource(id = R.drawable.baseline_place_24),
                     descricao = "",
@@ -36,6 +39,8 @@ fun InformacoesRestaurante() {
                     modifier = Modifier
                         .size(23.dp)
                 )
+                Spacer(modifier = Modifier.width(2.dp))
+
                 TextoComTodosAtributos(
                     value = "Endereço",
                     corTexto = colorResource(id = R.color.black),
@@ -61,7 +66,7 @@ fun InformacoesRestaurante() {
 
         Spacer(modifier = Modifier.height(30.dp))
         Column {
-            Row {
+            Row (verticalAlignment = Alignment.CenterVertically){
                 Icone(
                     painter = painterResource(id = R.drawable.outline_watch_later_24),
                     descricao = "",
@@ -69,6 +74,7 @@ fun InformacoesRestaurante() {
                     modifier = Modifier
                         .size(23.dp)
                 )
+                Spacer(modifier = Modifier.width(2.dp))
                 TextoComTodosAtributos(
                     value = "Aberto Aberto",
                     corTexto = colorResource(id = R.color.black),
@@ -97,7 +103,7 @@ fun InformacoesRestaurante() {
                 .fillMaxWidth()
 
         ) {
-            Row {
+            Row (verticalAlignment = Alignment.CenterVertically){
                 Icone(
                     painter = painterResource(id = R.drawable.baseline_attach_money_24),
                     descricao = "",
@@ -114,8 +120,7 @@ fun InformacoesRestaurante() {
             }
             Row(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(15.dp),
+                    .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
 
             ) {
@@ -152,4 +157,11 @@ fun InformacoesRestaurante() {
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun Preview() {
+    InformacoesRestaurante()
+    
 }

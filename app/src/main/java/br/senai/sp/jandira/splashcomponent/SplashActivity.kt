@@ -26,6 +26,7 @@ import br.senai.sp.jandira.R
 import br.senai.sp.jandira.avaliationcomponents.screen.AvaliationScreen
 import br.senai.sp.jandira.cartcomponents.screen.CartScreen
 import br.senai.sp.jandira.cartcomponents.screen.FinishOrder
+import br.senai.sp.jandira.loadingcomponents.screen.LoadingScreen
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
 import br.senai.sp.jandira.menucomponents.menu.screen.MenuScreen
 import br.senai.sp.jandira.menucomponents.selecteditem.screen.MenuInfoProductScreen
@@ -62,7 +63,7 @@ fun Navigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "avaliation_screen"
+        startDestination = "splash_screen"
     ) {
         composable("splash_screen") {
             SplashScreen(navController = navController)
@@ -103,6 +104,9 @@ fun Navigation() {
         }
         composable("avaliation_screen"){
             AvaliationScreen(navController = navController)
+        }
+        composable("loading_screen"){
+            LoadingScreen()
         }
 
 

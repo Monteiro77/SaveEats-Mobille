@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
@@ -20,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.Imagem
+import br.senai.sp.jandira.componentes.ImagemRedonda
 import br.senai.sp.jandira.componentes.NavigationRow
 import br.senai.sp.jandira.componentes.TextoComTodosAtributos
 
@@ -34,6 +36,7 @@ fun Header () {
     ){
         Row (
             horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(5.dp)
@@ -53,12 +56,10 @@ fun Header () {
                 )
             }
 
-            Imagem(
+            ImagemRedonda(
                 painter = painterResource(id = R.drawable.breadslogo),
                 descricao = "",
-                modifier = Modifier
-                    .size(70.dp)
-                    .clip(RoundedCornerShape(100))
+                size = 70.dp
             )
 
             }

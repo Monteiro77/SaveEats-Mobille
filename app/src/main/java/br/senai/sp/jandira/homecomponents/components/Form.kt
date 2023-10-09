@@ -281,7 +281,7 @@ fun Form(
             items(6){
                 Card (
                     modifier = Modifier
-                        .height(70.dp)
+                        .height(75.dp)
                         .width(370.dp)
                         .padding(5.dp)
                         .shadow(
