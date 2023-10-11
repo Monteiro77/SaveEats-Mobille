@@ -2,6 +2,7 @@ package br.senai.sp.jandira.componentes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -19,6 +20,7 @@ fun LinearGradient(): Brush {
   start = Offset(.1f, .1f),
   end = Offset.Infinite,
  )
+
 
  return gradient
 

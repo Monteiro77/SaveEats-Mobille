@@ -108,6 +108,9 @@ fun Navigation() {
         composable("loading_screen"){
             LoadingScreen()
         }
+        composable("welcome_screen"){
+            WelcomeScreen()
+        }
 
 
 
@@ -135,7 +138,7 @@ fun SplashScreen(navController: NavController) {
             )
         )
         delay(1000L)
-        navController.navigate("login_screen")
+        navController.navigate("welcome_screen")
     }
 
     Surface(

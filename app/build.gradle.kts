@@ -89,4 +89,6 @@ dependencies {
     implementation ("androidx.compose.material:material-icons-extended:compose_version")
 
     implementation("com.exyte:animated-navigation-bar:1.0.0")
+
+    implementation ("com.airbnb.android:lottie-compose:6.0.0")
 }
