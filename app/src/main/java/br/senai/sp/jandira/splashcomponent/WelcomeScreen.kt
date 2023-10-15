@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.Button
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -17,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.senai.sp.jandira.R
 import br.senai.sp.jandira.componentes.TextoComTodosAtributos
 import br.senai.sp.jandira.componentes.TextoComTodosAtributosEModifier
@@ -26,7 +28,7 @@ import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(navController: NavController) {
 
    val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.cooking_animation))
     Surface(
@@ -56,10 +58,19 @@ fun WelcomeScreen() {
 
             )
 
-            Row {
-                Row (){
+            Button(
+                onClick = {
+                    navController.navigate("login_screen")
+                },
 
-                }
+            ) {
+
+                TextoComTodosAtributos(
+                    value = "Continuar",
+                    corTexto = colorResource(id = R.color.white),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp
+                )
 
             }
 
@@ -73,5 +84,5 @@ fun WelcomeScreen() {
 @Preview
 @Composable
 fun WelcomeScreenPreview() {
-    WelcomeScreen()
+
 }

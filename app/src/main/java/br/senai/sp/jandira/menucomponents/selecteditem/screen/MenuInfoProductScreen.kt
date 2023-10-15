@@ -14,7 +14,7 @@ import br.senai.sp.jandira.menucomponents.selecteditem.components.Header
 
 @Composable
 fun MenuInfoProductScreen(
-    navController: NavHostController
+    navController: NavHostController,
 ) {
     Surface(
         modifier = Modifier

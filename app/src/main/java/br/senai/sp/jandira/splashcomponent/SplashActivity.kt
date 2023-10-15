@@ -26,6 +26,7 @@ import br.senai.sp.jandira.R
 import br.senai.sp.jandira.avaliationcomponents.screen.AvaliationScreen
 import br.senai.sp.jandira.cartcomponents.screen.CartScreen
 import br.senai.sp.jandira.cartcomponents.screen.FinishOrder
+import br.senai.sp.jandira.historicocomponents.screen.DetalhesPedidoScreen
 import br.senai.sp.jandira.loadingcomponents.screen.LoadingScreen
 import br.senai.sp.jandira.logincomponent.screen.LoginScreen
 import br.senai.sp.jandira.menucomponents.menu.screen.MenuScreen
@@ -109,7 +110,11 @@ fun Navigation() {
             LoadingScreen()
         }
         composable("welcome_screen"){
-            WelcomeScreen()
+            WelcomeScreen(navController = navController)
+        }
+
+        composable("detalhes_pedido_screen"){
+            DetalhesPedidoScreen(navController)
         }
 
 
